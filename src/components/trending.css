@@ -1,0 +1,53 @@
+@media only screen and  (max-width:404px){
+    .trending-sale{
+        background-color: rgb(58, 52, 52);
+        color: white;
+        width:19rem;
+        height: 1rem;
+        margin-left:1rem;
+        padding-left: 20px;
+        border-radius: 15px;
+    }
+    .trending-sale >p {
+    font-size: 0.6rem;
+    
+    }
+    .trending-products-main{
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    .trending-products-main >h3{
+        /* color: orange; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+    }
+    .trending-product{
+        display: grid;
+        grid-template-columns: 12.5rem 10rem;
+    }
+    .trending-product-first{
+        border: 1px solid red;
+        width:9rem;
+        height: 10rem;
+    }
+    .trending-product-second{
+        border: 1px solid red;
+        width:9rem;
+        height: 10rem;
+    }
+    .products-img{
+        width: 9.5rem;
+        height:6rem
+    }
+    .product-name{
+        margin-top: 0.5rem;
+        margin-left: 3rem;
+        font-weight: bold;
+    }
+    .trending-product{
+        /* border: 1px solid red; */
+        /* box-shadow: 10px 10px 10px 10px  grey; */
+        margin-top: 1rem;
+    }
+}
+

@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-size: 62.25%; */
+}
+@media only screen and  (max-width:404px){
+    /* .me-auto{
+        margin-left: -5rem;
+    } */
+    .navbar-toggler{
+        width: 20px;
+        margin-right:2.5rem ;
+    }
+    .nav-link{
+        margin-left: -7rem;
+        font-size: 1rem;
+        width: 5rem;
+        padding: 0px;
+    }
+    .navbar-nav{
+        margin-left: 8rem;
+        margin-top: 20px;
+    }
+    .sign-button{
+        background-color: red;
+        margin-top: 1rem;
+        margin-left:-7rem;
+        width:13rem;
+        height: 2.5rem;
+    }
+    .navbar-brand{
+        margin-left:0.5rem ;
+    }
+    .search-nav{
+        margin-left: -1rem;
+        width: 100px;
+        padding-left: 10px;
+        border-radius: 10px;
+        /* margin-top: ; */
+    }
+    .search-btn{
+        width: 10px;
+        height: 20px;
+        margin-left: -4.3rem;
+        margin-top: -0.4rem;
+        background-color: white;
+        border: none;
+    }
+    .search-icon{
+font-size: 1rem;
+    }
+   /* .search-nav{
+    margin-left: -7rem;
+    height: 30px;
+    width:180px;
+    margin-top:3px;
+    padding-left: 10px;
+    border: 1px solid red;
+
+   }
+   .search-btn{
+    width: 30px;
+    height: 30px;
+    margin-top:-1.8rem;
+    margin-left: 4rem;
+    border: none;
+    background-color: none;
+
+    border: 1px solid red;
+    padding: 4px;
+   
+   } */
+   .navbar-toggler-icon{
+margin-right:4rem;
+   }
+}
+
+.cart-icon{
+    color:#ff0000;
+    font-size: 1.5rem;
+}
+@media (max-width:985px){
+    
+}

@@ -1,0 +1,27 @@
+/* *{
+    margin-left: 1rem;
+} */
+.service-header{
+    width:18rem;
+    /* display: flex; */
+    margin-top: 2rem;
+    margin-left: 5.2rem;
+}
+.service-header > h3{
+font-size: 1.2rem;
+}
+.service-header > p{
+    font-size: 0.8rem;
+    }
+
+.service-main{
+    margin-left: 4.5rem;
+    display: grid;
+    grid-template-columns: 6.5rem 6.5rem 6.5rem;
+    margin-top: 1rem;
+}
+.service-para{
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: -0.8rem;
+}
