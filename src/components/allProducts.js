@@ -1,19 +1,26 @@
 import React from 'react'
 import Dummy from './data/dummy'
+import { useState,useEffect } from 'react'
 import "./allproduct.css"
 import {Pagination} from "react-bootstrap"
-const AllProducts = () => {
+const AllProducts = (props) => {
+//   const [All, setAll] = useState(props.all)
+//  useEffect(() => {
+// setAll(props.all)
+//  }, [])
+ 
   return (
     <>
     <div>
+     
         <h5 className='heading-all'>All Products</h5>
     </div>
     <div className="trending-product-all">
-      {Dummy.map((curElem) => {
+      {props.all.map((curElem) => {
             return(
             <div className="product-box-all">
-              <img   src={curElem.img} className="products-img"/>
-              <h5 className="product-name">{curElem.name}</h5>
+              <img   src={curElem.img} className="products-img-all"/>
+              <h5 className="product-name-all">{curElem.name}</h5>
               <p className='product-desc-all'>{curElem.desc}</p>
               <h6>{curElem.price}</h6>
             </div>
