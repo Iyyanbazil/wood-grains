@@ -6,21 +6,16 @@ import AllProduct from './allProducts'
 import Footer from './footer'
 import {useEffect,useState} from 'react'
 import axios from "axios"
-const Home = () => {
-const [AllProducts, setAllProducts] = useState([])
-useEffect(() => {
-  const data= axios.get("http://localhost:8000/").then((res)=>{
-   console.log(res.data);
-   setAllProducts(res.data)
-  })
+import{useSelector,useDispatch} from "react-redux"
+import { productActions } from '../Redux/productSlice'
+const Home = ({all}) => {
 
- }, [])
   return (
   <>
   <Header/>
   <Services/>
-  <Trending all={AllProducts} />
-  <AllProduct all={AllProducts}/>
+  <Trending all={all} />
+  <AllProduct all={all}/>
   <Footer/>
   </>
   )

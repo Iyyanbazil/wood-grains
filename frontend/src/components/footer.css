@@ -1,0 +1,7 @@
+@media only screen and  (max-width:412px){
+.footer-main{
+    height: 4rem;
+    background-color: grey;
+    width:400px;
+}
+}
