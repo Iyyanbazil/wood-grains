@@ -19,13 +19,13 @@ const Trending = ({all}) => {
         <p>Summer Sale is currenty on </p>
       </div>
       <div className="trending-products-main">
-        <h3 className="trending-main-head">Trending Products</h3>
+        <div className="trending-header"><h3>Trending Products</h3></div>
         <div className="trending-product">
           {all.filter((elem)=>elem.trending===true).map((curElem) => {
             return(
             <div className="product-box">
               <section>
-              <img   src={curElem.img} className="products-img"/>
+              <img   src={curElem.img} className="products-img-trend"/>
               <button className="shop-now-trend">Shop Now</button>
               </section>
               <h5 className="product-name">{curElem.name}</h5>

@@ -5,24 +5,35 @@ const Services = () => {
   return (
     <>
       <div className="service-header">
-        <h3>Our Service And Support</h3>
-        {/* <p>We prvide best and quality product to our customer</p> */}
+        <h3>Product on Discount</h3>
+       
       </div>
 
       <div className="service-main">
         <section>
-          <img height="30px" width="30px" src="/images/truck.png" />
-          <p className="service-para">free delivery</p>
+          <img className="service-discount-img" src="/images/dinning.jpg" />
+          <section className="service-disc-tag">
+          <p>Discount on</p>
+          </section>
+          <p className="service-para">Dinning</p>
+        
+        </section>
+
+        <section >
+          <img className="service-discount-img" src="/images/almirah.jpg" />
+          <section className="service-disc-tag">
+          <p>Discount on</p>
+          </section>
+          <p className="service-para">Almirah</p>
+
         </section>
 
         <section>
-          <img height="30px" width="30px" src="/images/money.png" />
-          <p className="service-para">On demand</p>
-        </section>
-
-        <section>
-          <img height="30px" width="50px" src="/images/quality.png" />
-          <p className="service-para">Best Quality</p>
+          <img className="service-discount-img" src="/images/dressing.jpg" />
+          <section className="service-disc-tag">
+          <p>Discount on</p>
+          </section>
+          <p className="service-para">Dressing</p>
         </section>
       </div>
     </>

@@ -1,6 +1,8 @@
 import React from 'react'
 import Dummy from './data/dummy'
 import { useState,useEffect } from 'react'
+import { BsCartPlus } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
 import "./allproduct.css"
 import {Pagination} from "react-bootstrap"
 const AllProducts = (props) => {
@@ -22,7 +24,11 @@ const AllProducts = (props) => {
               <img   src={curElem.img} className="products-img-all"/>
               <h5 className="product-name-all">{curElem.name}</h5>
               <p className='product-desc-all'>{curElem.desc}</p>
-              <h6>{curElem.price}</h6>
+              <h6 className='all-product-price'>Rs.{curElem.price}</h6>
+              <div className="all-div-icons">
+                   <BsCartPlus className="icon-cart-all" />
+                   <AiOutlineHeart className="icon-heart-all" />
+                 </div>
             </div>
             )
           })}

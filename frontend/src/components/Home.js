@@ -3,6 +3,7 @@ import Header from './header'
 import Services from './Services'
 import Trending from './trending'
 import AllProduct from './allProducts'
+import NewArrival from './NewArrival'
 import Footer from './footer'
 import {useEffect,useState} from 'react'
 import axios from "axios"
@@ -15,6 +16,7 @@ const Home = ({all}) => {
   <Header/>
   <Services/>
   <Trending all={all} />
+  {/* <NewArrival/> */}
   <AllProduct all={all}/>
   <Footer/>
   </>

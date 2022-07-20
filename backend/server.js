@@ -8,7 +8,7 @@ require("dotenv").config();
 // app.use(express.bodyParser({limit: '50mb'}));
 app.use(express.json({limit: '50mb'}))
 app.use(express.urlencoded({limit: '50mb'}));
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
+// app.use(cors({credentials: true, origin: 'https://wood-grains.herokuapp.com'}))
 const Port=process.env.PORT;
 const connectDb=require("./database/connection")
 const Proute=require("./database/route")

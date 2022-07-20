@@ -1,10 +1,84 @@
-@media only screen and  (max-width:412px){
+@media only screen and  (max-width:430px){
+    .trending-sale{
+        background-color: rgb(58, 52, 52);
+        color: white;
+        width:14rem;
+        height: 1rem;
+        /* margin-left:2rem; */
+        padding-left: 20px;
+        /* border-radius: 15px; */
+    }
+    .trending-sale >p {
+    font-size: 0.6rem;
+    
+    }
+    .trending-products-main{
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+       
+    }
+    .trending-main-head{
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+    .trending-products-main >h3{
+        /* color: orange; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+    }
+
+
+    .products-img-trend{
+       /* width:200px; */
+        width: 25rem;
+        height:11.2rem;
+        opacity: 0.6;
+        margin-bottom: -5rem;
+    }
+    .shop-now-trend{
+        position: relative;
+        /* top: -0.5rem; */
+        bottom: 3rem;
+        left: 8rem;
+        padding: 5px 13px 5px 13px;
+        font-size: 1.1rem;
+        background-color: black;
+        color: white;
+        border: none;
+       
+    }
+    .product-name{
+        /* margin-top: 0.5rem; */
+        margin-left: 3rem;
+        /* font-size: 30px; */
+        font-weight: bold;
+        position: relative;
+        /* top: -0.5rem; */
+        bottom: 3.1rem;
+        left: 4rem;
+        color: white;
+        font-size: 2.5rem;
+    }
+    .trending-header{
+        width:20rem;
+        /* display: flex; */
+        margin-top: 0.5rem;
+        margin-left: 5.7rem;
+    }
+    .trending > h3{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    }
+   
+}
+/* @media only screen and  (max-width:512px){
     .trending-sale{
         background-color: rgb(58, 52, 52);
         color: white;
         width:19rem;
         height: 1rem;
-        margin-left:2rem;
+        margin-left:2.2rem;
         padding-left: 20px;
         border-radius: 15px;
     }
@@ -22,18 +96,19 @@
         font-weight: bolder;
     }
     .trending-products-main >h3{
-        /* color: orange; */
+        
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
 
     .products-img{
-       /* width:200px; */
-        width: 22.5rem;
+       
+        width: 23.5rem;
         height:9.2rem;
         opacity: 0.6;
         margin-bottom: -5rem;
+        margin-right: 2rem;
     }
     .shop-now-trend{
         position: relative;
@@ -47,9 +122,9 @@
        
     }
     .product-name{
-        /* margin-top: 0.5rem; */
+      
         margin-left: 3rem;
-        /* font-size: 30px; */
+       
         font-weight: bold;
         position: relative;
         top: -0.5rem;
@@ -58,5 +133,5 @@
         font-size: 2.5rem;
     }
    
-}
+} */
 

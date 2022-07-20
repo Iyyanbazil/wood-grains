@@ -11,13 +11,17 @@ import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { Typography } from "@mui/material";
 import { Rating } from "@mui/material";
+import { useParams } from "react-router-dom";
+import { MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 
 const SearchPage = ({ all }) => {
   const Search = useSelector((state) => state.Search.Search);
+  const [linker, setlinker] = useState("")
   const filterd = all.filter(
     (elem) =>
       elem.name.toLowerCase() != Search || elem.category.toLowerCase() != Search
   );
+  const linked =useParams()
   // if(Search===""){
   //     return(
   //         <h1>No result found</h1>
@@ -26,56 +30,68 @@ const SearchPage = ({ all }) => {
   if (!filterd) {
     return <h1>no result found</h1>;
   }
-  const showTrending=(all)=>{
+  const showTrending = (all) => {
     // const all=all.filter((cur)=>cur.trending==true)
     // return all
     // console.log(all);
-  }
+    console.log(linked);
+    setlinker("trend")
+    console.log(linker);
+  };
   return (
     <>
       <div>
-        <img width="408rem" height="130rem" src="/images/dinning.jpg" />
+        <img width="100%" height="130rem" src="/images/dinning.jpg" />
       </div>
       <div className="search-filters">
-        <ul className="search-filter-list">
-          <div>
-            Best Rated <AiOutlineLike className="icon-like-search" />
+        <div className="search-filter-list">
+          <div className="best-rated">
+            <a className={linker==="best" ? ("linked"):("not-linked")} href="#best" onClick={()=>{setlinker("best")}}>
+            Best Rated 
+            {/* <AiOutlineLike className="icon-like-search" /> */}
+            </a> 
           </div>
-          <div  className="trending-div-search">
-           <h3 onClick={showTrending}> Trending</h3> <GiSmallFire className="icon-fire-search" />
+          <div className="trending-div-search">
+            <a className={linker==="trend" ? ("linked"):("not-linked")} href="#best" onClick={()=>{showTrending();setlinker("trend")}}> Trending</a>
+            {/* <GiSmallFire className="icon-fire-search" /> */}
           </div>
-          <div>New Coming</div>
-          <div>
-            {" "}
-            <Dropdown>
-              <Dropdown.Toggle id="dropdown-basic">Category</Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+          <div className="new-coming"> <a href="#best">New Coming</a></div>
+          <div className="selects-div">
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-label">Category</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                // value={age}
+                label="Age"
+                // onChange={handleChange}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl sx={{ m: 1, minWidth: 120, }}>
+              <InputLabel id="demo-simple-select-label">Price</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                // value={age}
+                label="Age"
+                // onChange={handleChange}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+          
           </div>
-          <div>
-            {" "}
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Price
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>{" "}
-          </div>
-        </ul>
+        </div>
       </div>
       <hr />
       {/* ********* Searched products ************ */}
-      <div className="trending-product-search">
+      { <div className="trending-product-search">
         {all
           .filter(
             (cur) =>
@@ -88,28 +104,28 @@ const SearchPage = ({ all }) => {
               <div className="product-box-search">
                 <div className="search-sale-div">
                   <img src="/images/salepro.png" className="sale-search" />
-                  <p>upto 25%</p>
-                </div>
-                <img src={elem.img} className="products-img-search" />
+                  
+               </div>
+               <img src={elem.img} className="products-img-search" />
 
-                <h5 className="product-name-search">{elem.name}</h5>
+               <h5 className="product-name-search">{elem.name}</h5>
                 <p className="product-desc-search">{elem.desc}</p>
 
-                <h6 className="search-price">RS.{elem.price}</h6>
+               <h6 className="search-price">RS.{elem.price}</h6>
 
-                {/* <Typography component="legend">Read only</Typography> */}
-                <Rating name="read-only" value="4" readOnly />
+                
+               
 
                 <div className="trending-div-search">
-                  <BsCartPlus className="icon-cart-search" />
-                  <AiOutlineHeart className="icon-cart-heart" />
-                </div>
-              </div>
-            );
-          })}
-      </div>
-
-      {/* })} */}
+                   <BsCartPlus className="icon-cart-search" />
+                   <AiOutlineHeart className="icon-cart-heart" />
+                 </div>
+               </div>
+             );
+           })}
+       </div> }
+      {/* <Rating name="read-only" value="4" readOnly /> */}
+  
     </>
   );
 };

@@ -24,7 +24,55 @@
     .service-para{
         font-size: 0.7rem;
         font-weight: bold;
-        margin-left: -0.8rem;
+        /* margin-left: -0.8rem; */
+    }
+
+}
+@media only screen and  (max-width:512px){
+    .service-header{
+        width:20rem;
+        /* display: flex; */
+        margin-top: 2rem;
+        margin-left: 7rem;
+    }
+    .service-header > h3{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    }
+    .service-header > p{
+        font-size: 1rem;
+        }
+    
+    .service-main{
+        margin-left: 0.5rem;
+        display: grid;
+        grid-template-columns: 9rem 9rem 9rem;
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+    }
+    .service-para{
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+        margin-top: -2rem;
+        /* margin-bottom: 2rem; */
+    }
+    .service-discount-img{
+        height: 8rem;
+        width: 8rem;
+    }
+    .service-disc-tag{
+        /* margin-top: -8rem; */
+        width:6rem;
+        height: 2rem;
+        padding-left: 0.2rem;
+        color: white;
+        background-color: red;
+        position: relative;
+        bottom: 8rem;
+        opacity: 0.8;
+       
     }
 
 }

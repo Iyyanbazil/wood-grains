@@ -1,9 +1,80 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./header.css"
+import Carousel from 'react-bootstrap/Carousel';
 const Header = () => {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
   return (
   <>
-  <div className='header-main'>
+<Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src="/images/1.jpg"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3>Furniture best for  Home</h3>
+          <p>Best stock for the best house.New arrival on outlet</p>
+          <section className='header-main-section-four'>
+<button className='btn-shop'>Shop Now </button>
+
+    </section>
+        </Carousel.Caption>
+      </Carousel.Item >
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src="/images/crousel 1.jpg"
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+        <h3>Looking  for Office use</h3>
+          <p>Starting a startup.Wants to buy furniture.WELCOME</p>
+          <section className='header-main-section-four'>
+<button className='btn-shop'>Shop Now </button>
+
+    </section>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src="/images/crousel 2.jpg"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+        <h3>Wants to taste Royality?</h3>
+          <p>EveryOne is royal in dreams.Wants to be in real</p>
+          <section className='header-main-section-four'>
+<button className='btn-shop'>Shop Now </button>
+
+    </section>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src="/images/crousel 3.jpg"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+        <h3>Modern Furniture available </h3>
+          <p>For young blood.Amazing quality and asthetic designs</p>
+          <section className='header-main-section-four'>
+<button className='btn-shop'>Shop Now </button>
+
+    </section>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  {/* <div className='header-main'>
     <section className='header-main-section-one'><span className='sale-span'>Winter Sale</span><span className='discount-span'>Get upto 20% discount</span></section>
 
     <section className='header-main-section-two'>
@@ -19,7 +90,7 @@ const Header = () => {
 <button className='btn-shop'>Shop Now </button>
 
     </section>
-    </div>
+    </div> */}
   </>
   )
 }

@@ -29,7 +29,7 @@ useEffect(() => {
       <Route exact path="/search" element={<SearchPage all={AllProducts}/>}/>
     </Routes>
   </Router>
- {/* <Home all={AllProducts}/> */}
+ {/* {/* <Home all={AllProducts}/> */}
   </>
   
   );

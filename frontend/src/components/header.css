@@ -6,7 +6,7 @@
     100%{background-image: url("/public/images/1.jpg");    background-position: center; }
 }
 
-@media only screen and  (max-width:412px){
+@media only screen and  (max-width:768px){
 
     .header-main{
         /* background-image: url("/public/images/1.jpg"); */
@@ -14,13 +14,14 @@
         animation-timing-function: 2s;
         animation-duration: 6s;
         animation-iteration-count: infinite;
-    width:22rem;
+         width:24rem;
         opacity: 0.8;
         padding-top: 30px;
         padding-left: 20px;
         padding-bottom: 20px;
         border-radius: 20px;
         margin-left: 1.8rem;
+        margin-right: 3.8rem;
     }
     
     .header-main-section-one{
@@ -65,3 +66,60 @@
 
 
 }
+/* 
+@media only screen and  (max-width:512px){
+
+    .header-main{
+        
+        animation-name: imager;
+        animation-timing-function: 2s;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    width:25rem;
+        opacity: 0.8;
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        border-radius: 20px;
+        margin-left: 1.8rem;
+    }
+    
+    .header-main-section-one{
+        font-size: 0.6rem;
+        
+        width: 11rem;
+        padding: 0.2rem;
+        border-radius: 2rem;
+        background-color: pink;
+    }
+    .sale-span{
+        border-radius: 2rem;
+        height: 2rem;
+        background-color: rgb(234, 169, 49);
+        color: white;
+        font-weight: bold;
+       
+        padding: 0.3rem;
+    
+    }
+    .discount-span{
+        margin-left: 0.5rem;
+    }
+    .header-main-section-two{
+        width: 14rem;
+    }
+    .header-main-section-third{
+      
+        color: rgb(222, 219, 219);
+        font-weight: bolder;
+    }
+    .btn-shop{
+        padding: 5px 10px 5px 10px;
+        color: white;
+        background-color: rgb(244, 102, 102);
+        border: none;
+        border-radius: 2px;
+    }
+
+
+} */
