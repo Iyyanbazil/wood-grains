@@ -94,6 +94,35 @@
         height:2rem;
         background-color:rgb(234, 96, 46);
     }
+    .nav-login-div{
+    display: flex;
+    }
+ 
+    .sign-button{
+        background-color: rgb(75, 75, 238);
+        color: white;
+        margin-top: 1rem;
+        margin-left:1rem;
+        width:8rem;
+        height: 2.5rem;
+       padding-left: 1.2rem;
+       font-size: 1.5rem;
+       text-decoration: none;
+    }
+    a:hover{
+        color: white;
+    }
+    .login-button{
+        background-color: rgb(240, 74, 74);
+        margin-top: 1rem;
+        margin-left:0rem;
+        width:8rem;
+        height: 2.5rem;
+        color: white;
+        padding-left: 2rem;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
 }
 /* @media (min-width: 576px){
 .container, .container-sm {

@@ -58,12 +58,12 @@ const Navbars = () => {
             <Nav className="me-auto">
               <Nav.Link as={NavLink}  to="/">Home</Nav.Link>
               <Nav.Link href="#link">Contact</Nav.Link>
-              <Nav.Link href="#link">
-                Cart <GiShoppingCart className="cart-icon" />
-              </Nav.Link>
+              
+             <div className="nav-login-div">
+            <Link  className="login-button"   to="/login">Login</Link>
+            <Link  className="sign-button"   to="/sign">Sign Up</Link>
              
-
-              <Button className="sign-button">Sign-up</Button>
+         </div> 
             </Nav>
           </Navbar.Collapse>
         </Container>

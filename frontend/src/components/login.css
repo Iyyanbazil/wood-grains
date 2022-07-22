@@ -1,0 +1,83 @@
+@media only screen and  (max-width:430px){
+   
+.email-pass-div{
+    /* border: 2px solid black; */
+    margin-top: 4rem;
+    /* box-shadow: 10px 10px 10px 10px grey; */
+    border-radius: 1.5rem;
+   margin-left: 2rem;
+   width: 85%;
+   padding-top: 1rem;
+   opacity: 0.9;
+}
+#password{
+    margin-left: 1rem;
+    height: 2.5rem;
+    width: 20rem;
+    position: relative;
+    bottom: 0.4rem;
+    padding-left: 1rem;
+    border-radius: 20px;
+}
+#email{
+    margin-left: 1rem;
+    height: 2.5rem;
+    width: 20rem;
+    position: relative;
+    bottom: 0.4rem;
+    padding-left: 1rem;
+    border-radius: 20px;
+}
+.email-label{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.password-label{
+     margin-left: 2rem;
+    font-size: 1.5rem;
+}
+.login-forget-pass{
+    margin-left: 12.5rem;
+    color: blue;
+}
+.login-login-div{
+    margin-left: 2.5rem;
+}
+.login-btn{
+    padding: 0.4rem 6.5rem;
+    background-color: rgb(241, 106, 57);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.login-main-head{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: -1rem;
+    font-family: cursive;
+}
+.login-or-div > p{
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+.login-btn-google{
+    margin-left: 2rem;
+    padding: 0.4rem 6.5rem;
+    /* background-color: rgb(241, 106, 57); */
+    /* color: white; */
+    border: none;
+    border-radius: 15px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    width: 85%;
+}
+.login-google{
+    font-size: 4rem;
+}
+
+
+}
