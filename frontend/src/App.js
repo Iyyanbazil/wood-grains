@@ -12,7 +12,7 @@ function App() {
   const [AllProducts, setAllProducts] = useState([])
   // https://wood-grains.herokuapp.com/
 useEffect(() => {
-  const data= axios.get("http://localhost:8000/").then((res)=>{
+  const data= axios.get(" // https://wood-grains.herokuapp.com/").then((res)=>{
    console.log(res.data);
    setAllProducts(res.data)
   })

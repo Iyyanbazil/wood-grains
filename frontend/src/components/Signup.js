@@ -19,9 +19,23 @@ const Signup = () => {
     console.log(user);
   }
   const handleSubmit =async()=>{
-    axios.post("http://localhost:8000/sign",user).then((res)=>{
-      console.log(res);
-    })
+    if(user.Fname==="" || user.Lname==="" || user.email==="" || user.password==="" || user.Cpassword===""  ){
+      alert("Please fill the form completel")
+    }
+    if(user.Fname!="" || user.Lname!="" || user.email!="" || user.password!="" || user.Cpassword!=""  ){
+   if(user.Cpassword!="" && user.password!=""){
+    if(user.password!=user.Cpassword){
+      alert("password not matched")
+    } else{
+      axios.post("http://localhost:8000/sign",user).then((res)=>{
+        console.log(res);
+      })
+      window.location.pathname="/"
+    }
+   }
+  }
+  
+   
   }
   return (
     <div className="sign-background">

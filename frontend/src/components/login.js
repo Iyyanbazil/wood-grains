@@ -7,6 +7,8 @@ const Login = () => {
         email:"",
         password:"",
     })
+    const [currentUser,setcurrentUser]=useState({})
+   
     const handleChange=(e)=>{
       const {value,name}=e.target
       setlogin({
@@ -15,15 +17,35 @@ const Login = () => {
       })
       console.log(login);
     }
-    const handleSubmit=()=>{
-        axios.post("http://localhost:8000/login",login).then((res)=>{
-            console.log(res);
-        })
-        console.log(login);
+    const handleSubmit= async()=>{
+        if(login.email==="" || login.password===""){
+            alert("Fill the required field")
+        }else{
+            // axios.post("http://localhost:8000/login",login).then((res)=>{
+            //     console.log(res.data);
+            //     window.localStorage.setItem("user",JSON.stringify(res.data))
+               
+            // })
+            const res=await axios.post("http://localhost:8000/login",login)
+            console.log(res.data);
+            window.localStorage.setItem("user",JSON.stringify(res.data))
+            if(res.data.msg==="No such user exist"){
+                alert("No such user")
+            }else{
+                window.location.pathname="/"
+            }
+        }
+     
+        window.localStorage.getItem("user")
+        if(currentUser!=" no such user exist"){
+            // window.location.pathname="/"
+        }
+        // console.log(login);
     }
   return (
    <>
         <div className="email-pass-div">
+            <h1>{currentUser.Fname}</h1>
             <h3 className='login-main-head'>Login Account</h3>
             <section className='email-section'>
         <label for="email" className='email-label'>Email</label>

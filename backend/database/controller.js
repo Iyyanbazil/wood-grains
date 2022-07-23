@@ -45,14 +45,16 @@ const login=async (req,res)=>{
   const data=User.findOne({email:email},(err,user)=>{
     if(user){
       if(user.password===password){
-        res.send("user exist")
-        console.log("user exist");
+        res.json(user)
+        console.log(user);
+        // res.json(user)
       }else{
         res.send("incorrect password")
+        
         console.log("incorrect password");
       }
     }else{
-      res.send("No such user exist")
+      res.json({msg:"No such user exist"})
       console.log(" no such user exist");
     }
   })

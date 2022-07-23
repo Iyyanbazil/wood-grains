@@ -1,10 +1,10 @@
 import "./Navbar.css";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useLocation } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
-import {HiOutlinePhoneMissedCall} from "react-icons/hi"
+import {HiLogout, HiOutlinePhoneMissedCall} from "react-icons/hi"
 import {BsCart4} from "react-icons/bs"
 import {BsHeart}from "react-icons/bs"
 import { useSelector, useDispatch } from "react-redux";
@@ -15,6 +15,12 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 const Navbars = () => {
   const [SearchVal, setSearchVal] = useState("");
+  const [current, setcurrent]=useState({})
+  useEffect(()=>{
+    setcurrent(JSON.parse(window.localStorage.getItem("user")))
+  },[])
+ 
+  
   const dispatch = useDispatch();
   let navigate=useNavigate()
   let location=useLocation()
@@ -31,6 +37,16 @@ const Navbars = () => {
     }
    
   };
+
+  const Logout=()=>{
+    setcurrent({  Fname:"",
+    Lname:"",
+    email:"",
+    password:"",
+    Cpassword:"",})
+    window.location.reload()
+  }
+ 
   return (
     <>
       <Navbar bg="light" expand="lg" className="Navbar-size">
@@ -40,6 +56,7 @@ const Navbars = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Link to="/" className="brand-name">Wood-Grains</Link>
+         
           {/* </LinkContainer> */}
        
         
@@ -58,8 +75,9 @@ const Navbars = () => {
             <Nav className="me-auto">
               <Nav.Link as={NavLink}  to="/">Home</Nav.Link>
               <Nav.Link href="#link">Contact</Nav.Link>
-              
+              <h4>Login as <u>{current.Fname}</u></h4>
              <div className="nav-login-div">
+              {/* {currentUser.Fname==="" ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/login">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)} */}
             <Link  className="login-button"   to="/login">Login</Link>
             <Link  className="sign-button"   to="/sign">Sign Up</Link>
              
