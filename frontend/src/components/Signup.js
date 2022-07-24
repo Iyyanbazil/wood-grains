@@ -27,7 +27,7 @@ const Signup = () => {
     if(user.password!=user.Cpassword){
       alert("password not matched")
     } else{
-      axios.post("http://localhost:8000/sign",user).then((res)=>{
+      axios.post("https://wood-grains.herokuapp.com/sign",user).then((res)=>{
         console.log(res);
       })
       window.location.pathname="/"

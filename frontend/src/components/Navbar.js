@@ -17,9 +17,10 @@ const Navbars = () => {
   const [SearchVal, setSearchVal] = useState("");
   const [current, setcurrent]=useState({})
   useEffect(()=>{
-    setcurrent(JSON.parse(window.localStorage.getItem("user")))
+    const value=window.localStorage.getItem("user")
+    setcurrent(JSON.parse(value))
   },[])
- 
+  const url=window.location.pathname
   
   const dispatch = useDispatch();
   let navigate=useNavigate()
@@ -39,11 +40,16 @@ const Navbars = () => {
   };
 
   const Logout=()=>{
-    setcurrent({  Fname:"",
+//     setcurrent({Fname:"",
+//   Lname:"",
+// email:"",
+// password:"",
+// Cpassword:"", })
+    window.localStorage.setItem("user",JSON.stringify({Fname:"",
     Lname:"",
-    email:"",
-    password:"",
-    Cpassword:"",})
+  email:"",
+  password:"",
+  Cpassword:"", }))
     window.location.reload()
   }
  
@@ -60,14 +66,15 @@ const Navbars = () => {
           {/* </LinkContainer> */}
        
         
-            <button  className="call-btn-nav" onClick={submitSearch}>
-              <HiOutlinePhoneMissedCall className="call-icon-nav" />
+            <button  className="call-btn-nav" >
+             <Link to="/"> <HiOutlinePhoneMissedCall className="call-icon-nav" /></Link>
             </button>
-             <button  className="heart-btn-nav" onClick={submitSearch}>
+             <button  className="heart-btn-nav" >
               <BsHeart className="heart-icon-nav" />
             </button>
-            <button  className="cart-btn-nav" onClick={submitSearch}>
-              <BsCart4 className="cart-icon-nav" />
+            <button  className="cart-btn-nav" >
+            {current.Fname!="" ?(  <Link to="/cart"><BsCart4 className="cart-icon-nav" /></Link>):( <Link to="/login"><BsCart4 className="cart-icon-nav" /></Link>)}
+              {/* <Link to="/cart"><BsCart4 className="cart-icon-nav" /></Link> */}
             </button> 
        
           
@@ -75,10 +82,11 @@ const Navbars = () => {
             <Nav className="me-auto">
               <Nav.Link as={NavLink}  to="/">Home</Nav.Link>
               <Nav.Link href="#link">Contact</Nav.Link>
-              <h4>Login as <u>{current.Fname}</u></h4>
+              {current.Fname!="" ?( <h4>Login as <u>{current.Fname}</u></h4>):(<hr/>)}
+             
              <div className="nav-login-div">
-              {/* {currentUser.Fname==="" ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/login">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)} */}
-            <Link  className="login-button"   to="/login">Login</Link>
+              {current.Fname!="" ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/login">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)}
+            {/* <Link  className="login-button"   to="/login">Login</Link> */}
             <Link  className="sign-button"   to="/sign">Sign Up</Link>
              
          </div> 
@@ -86,18 +94,25 @@ const Navbars = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="navbar-div-nav">
-      <input
-            placeholder="Search"
-            className="search-nav"
-            value={SearchVal}
-            onChange={(e) => saveSearch(e)}
-          /> 
-        
-            <button  className="search-btn-new" onClick={submitSearch}>
-              <FaSearch className="search-icon" />
-            </button>
-            </div>
+      {url!== "/cart" && 
+        (
+          <>
+         <div className="navbar-div-nav">
+         <input
+               placeholder="Search"
+               className="search-nav"
+               value={SearchVal}
+               onChange={(e) => saveSearch(e)}
+             /> 
+           
+               <button  className="search-btn-new" onClick={submitSearch}>
+                 <FaSearch className="search-icon" />
+               </button>
+           </div>
+           </>
+      )
+      }
+     
             <div className="nav-disc-div">
               
               <p>Summer Sale is On!</p>

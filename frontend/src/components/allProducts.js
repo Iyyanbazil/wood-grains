@@ -1,5 +1,6 @@
 import React from 'react'
 import Dummy from './data/dummy'
+import { Link } from 'react-router-dom';
 import { useState,useEffect } from 'react'
 import { BsCartPlus } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -10,17 +11,21 @@ const AllProducts = (props) => {
 //  useEffect(() => {
 // setAll(props.all)
 //  }, [])
- 
+ const showDetails=(id)=>{
+window.location.pathname=`/${id}`
+ }
   return (
     <>
     <div>
      
         <h5 className='heading-all'>All Products</h5>
     </div>
-    <div className="trending-product-all">
+    <div className="trending-product-all" >
+    
       {props.all.map((curElem) => {
             return(
-            <div className="product-box-all">
+            <div className="product-box-all" onClick={()=>{showDetails(curElem._id)}}>
+                
               <img   src={curElem.img} className="products-img-all"/>
               <h5 className="product-name-all">{curElem.name}</h5>
               <p className='product-desc-all'>{curElem.desc}</p>
@@ -29,9 +34,11 @@ const AllProducts = (props) => {
                    <BsCartPlus className="icon-cart-all" />
                    <AiOutlineHeart className="icon-heart-all" />
                  </div>
+                 
             </div>
             )
           })}
+         
           </div>
           <div className="pagination-all">
           <Pagination>

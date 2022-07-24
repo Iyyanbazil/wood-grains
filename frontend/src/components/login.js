@@ -26,7 +26,7 @@ const Login = () => {
             //     window.localStorage.setItem("user",JSON.stringify(res.data))
                
             // })
-            const res=await axios.post("http://localhost:8000/login",login)
+            const res=await axios.post("https://wood-grains.herokuapp.com/login",login)
             console.log(res.data);
             window.localStorage.setItem("user",JSON.stringify(res.data))
             if(res.data.msg==="No such user exist"){
