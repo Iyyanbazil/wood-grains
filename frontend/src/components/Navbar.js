@@ -16,9 +16,16 @@ import { useNavigate } from "react-router";
 const Navbars = () => {
   const [SearchVal, setSearchVal] = useState("");
   const [current, setcurrent]=useState({})
+  const [loger, setloger] = useState()
   useEffect(()=>{
-    const value=window.localStorage.getItem("user")
+    const data=window.localStorage.getItem("islogin")
+    setloger(JSON.parse(data))
+    if(data==="true"){
+      const value=window.localStorage.getItem("user")
     setcurrent(JSON.parse(value))
+    console.log(value);
+    }
+    
   },[])
   const url=window.location.pathname
   
@@ -45,11 +52,17 @@ const Navbars = () => {
 // email:"",
 // password:"",
 // Cpassword:"", })
-    window.localStorage.setItem("user",JSON.stringify({Fname:"",
-    Lname:"",
+
+if(loger===true){
+  window.localStorage.setItem("user",JSON.stringify({
+    Fname:"",
+  Lname:"",
   email:"",
-  password:"",
-  Cpassword:"", }))
+password:"",
+Cpassword:"", }))
+
+}
+  window.localStorage.setItem("islogin",false)
     window.location.reload()
   }
  
@@ -62,7 +75,7 @@ const Navbars = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Link to="/" className="brand-name">Wood-Grains</Link>
-         
+        
           {/* </LinkContainer> */}
        
         
@@ -73,19 +86,21 @@ const Navbars = () => {
               <BsHeart className="heart-icon-nav" />
             </button>
             <button  className="cart-btn-nav" >
-            {current.Fname!="" ?(  <Link to="/cart"><BsCart4 className="cart-icon-nav" /></Link>):( <Link to="/login"><BsCart4 className="cart-icon-nav" /></Link>)}
-              {/* <Link to="/cart"><BsCart4 className="cart-icon-nav" /></Link> */}
+            {loger===true ?(  <Link to="/cart"><BsCart4 className="cart-icon-nav" /></Link>):( <Link to="/login"><BsCart4 className="cart-icon-nav" /></Link>)}
+           
             </button> 
        
           
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+             
+         
               <Nav.Link as={NavLink}  to="/">Home</Nav.Link>
               <Nav.Link href="#link">Contact</Nav.Link>
-              {current.Fname!="" ?( <h4>Login as <u>{current.Fname}</u></h4>):(<hr/>)}
+              {loger===true ?( <h4>Login as <u>{current.Fname}</u></h4>):(<hr/>)}
              
              <div className="nav-login-div">
-              {current.Fname!="" ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/login">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)}
+              {loger===true ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)}
             {/* <Link  className="login-button"   to="/login">Login</Link> */}
             <Link  className="sign-button"   to="/sign">Sign Up</Link>
              

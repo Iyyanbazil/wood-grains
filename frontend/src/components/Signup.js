@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import "./signup.css";
 import axios from "axios"
+import API from "./API"
 import { FcGoogle } from "react-icons/fc";
 const Signup = () => {
   const [user, setuser] = useState({
@@ -27,10 +28,10 @@ const Signup = () => {
     if(user.password!=user.Cpassword){
       alert("password not matched")
     } else{
-      axios.post("https://wood-grains.herokuapp.com/sign",user).then((res)=>{
+      axios.post(`${API}sign`,user).then((res)=>{
         console.log(res);
       })
-      window.location.pathname="/"
+      window.location.pathname="/login"
     }
    }
   }

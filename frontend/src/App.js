@@ -6,15 +6,17 @@ import Test from './components/test';
 import Login from './components/login';
 import Signup from "./components/Signup"
 import ProductDetails from './components/productDetails';
+import AddressPage from './components/AddressPage';
 import axios from "axios"
 import {useState,useEffect} from "react";
 import {BrowserRouter as Router,Route,Routes,Link} from "react-router-dom"
 import Cart from './components/Cart';
+import API from "./components/API"
 function App() {
   const [AllProducts, setAllProducts] = useState([])
   // https://wood-grains.herokuapp.com/
 useEffect(() => {
-  const data= axios.get("https://wood-grains.herokuapp.com/").then((res)=>{
+  const data= axios.get(API).then((res)=>{
    console.log(res.data);
    setAllProducts(res.data)
   })
@@ -35,6 +37,7 @@ useEffect(() => {
       <Route exact path="/sign" element={<Signup all={AllProducts}/>}/>
       <Route exact path="/cart" element={<Cart all={AllProducts}/>}/>
       <Route exact path="/:id" element={<ProductDetails all={AllProducts}/>}/>
+      <Route exact path="/:id/address" element={<AddressPage all={AllProducts}/>}/>
     </Routes>
   </Router>
  {/* {/* <Home all={AllProducts}/> */}

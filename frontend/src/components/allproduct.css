@@ -58,9 +58,9 @@
         color: rgb(232, 54, 54);
         font-size: 1.5rem;
     }
-    .all-div-icons{
+    /* .all-div-icons{
         display: flex;
-    }
+    } */
     .icon-cart-all{
         font-size: 2.5rem;
         margin-left: 2rem;
@@ -82,6 +82,7 @@
         margin-top: 3rem;
         width: 20rem;
     }
+ 
 }
 /* 
 @media only screen and  (max-width:512px){

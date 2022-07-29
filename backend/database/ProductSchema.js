@@ -6,6 +6,11 @@ const mongoose=require("mongoose")
     price:Number,
     img:String,
     trending:Boolean,
+    rating:Number,
+   //  images:[String],
+    img1:String,
+    img2:String,
+    img3:String,
 
  })
 

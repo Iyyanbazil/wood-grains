@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState,useEffect } from 'react'
 import { BsCartPlus } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 import "./allproduct.css"
 import {Pagination} from "react-bootstrap"
 const AllProducts = (props) => {
@@ -11,8 +12,10 @@ const AllProducts = (props) => {
 //  useEffect(() => {
 // setAll(props.all)
 //  }, [])
+const Navigate=useNavigate()
  const showDetails=(id)=>{
-window.location.pathname=`/${id}`
+// window.location.pathname=`/${id}`
+Navigate(`/${id}`)
  }
   return (
     <>
@@ -31,7 +34,8 @@ window.location.pathname=`/${id}`
               <p className='product-desc-all'>{curElem.desc}</p>
               <h6 className='all-product-price'>Rs.{curElem.price}</h6>
               <div className="all-div-icons">
-                   <BsCartPlus className="icon-cart-all" />
+                <button className="cart-button-products">Add to Cart <BsCartPlus className="icon-cart-all" /></button>
+                  
                    <AiOutlineHeart className="icon-heart-all" />
                  </div>
                  

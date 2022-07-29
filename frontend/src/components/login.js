@@ -2,13 +2,14 @@ import React,{useState} from 'react'
 import "./login.css"
 import axios from "axios"
 import {FcGoogle} from "react-icons/fc"
+import API from "./API"
 const Login = () => {
     const [login, setlogin] = useState({
         email:"",
         password:"",
     })
     const [currentUser,setcurrentUser]=useState({})
-   
+   const [isLogin, setisLogin] = useState("false")
     const handleChange=(e)=>{
       const {value,name}=e.target
       setlogin({
@@ -21,14 +22,17 @@ const Login = () => {
         if(login.email==="" || login.password===""){
             alert("Fill the required field")
         }else{
+            setisLogin("true")
             // axios.post("http://localhost:8000/login",login).then((res)=>{
             //     console.log(res.data);
             //     window.localStorage.setItem("user",JSON.stringify(res.data))
                
             // })
-            const res=await axios.post("https://wood-grains.herokuapp.com/login",login)
+            const res=await axios.post(`${API}login`,login)
             console.log(res.data);
             window.localStorage.setItem("user",JSON.stringify(res.data))
+            
+            window.localStorage.setItem("islogin","true")
             if(res.data.msg==="No such user exist"){
                 alert("No such user")
             }else{
@@ -44,8 +48,10 @@ const Login = () => {
     }
   return (
    <>
+   
         <div className="email-pass-div">
-            <h1>{currentUser.Fname}</h1>
+            {/* <h1>{currentUser.Fname}</h1>
+            <p>{isLogin}</p> */}
             <h3 className='login-main-head'>Login Account</h3>
             <section className='email-section'>
         <label for="email" className='email-label'>Email</label>
@@ -60,7 +66,7 @@ const Login = () => {
             <p>Forgot Password?</p>
         </section>
         <section className='login-login-div'>
-            <button className='login-btn' onClick={handleSubmit}>Login</button>
+            <button className='login-btn' onClick={()=>{handleSubmit()}}>Login</button>
         </section>
        
         </div>

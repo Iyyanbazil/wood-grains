@@ -2,7 +2,7 @@
    
 .email-pass-div{
     /* border: 2px solid black; */
-    margin-top: 4rem;
+    margin-top: 2rem;
     /* box-shadow: 10px 10px 10px 10px grey; */
     border-radius: 1.5rem;
    margin-left: 2rem;
@@ -61,7 +61,7 @@
     font-family: cursive;
 }
 .login-or-div > p{
-    margin-left: 10rem;
+    margin-left: 12rem;
     margin-top: 2rem;
 }
 .login-btn-google{
