@@ -1,16 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useSelecor, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./SearchPage.css";
 import { AiOutlineLike } from "react-icons/ai";
 import { GiSmallFire } from "react-icons/gi";
 import { BsCartPlus } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
-import { BiTag } from "react-icons/bi";
-import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
-import { Typography } from "@mui/material";
-import { Rating } from "@mui/material";
+
 import { useParams } from "react-router-dom";
 import { MenuItem, Select, InputLabel, FormControl } from "@mui/material";
 
@@ -22,6 +18,7 @@ const SearchPage = ({ all }) => {
       elem.name.toLowerCase() != Search || elem.category.toLowerCase() != Search
   );
   const linked =useParams()
+  const {cat}=useParams()
   // if(Search===""){
   //     return(
   //         <h1>No result found</h1>
@@ -51,6 +48,7 @@ const SearchPage = ({ all }) => {
             {/* <AiOutlineLike className="icon-like-search" /> */}
             </a> 
           </div>
+          
           <div className="trending-div-search">
             <a className={linker==="trend" ? ("linked"):("not-linked")} href="#best" onClick={()=>{showTrending();setlinker("trend")}}> Trending</a>
             {/* <GiSmallFire className="icon-fire-search" /> */}
@@ -91,13 +89,14 @@ const SearchPage = ({ all }) => {
       </div>
       <hr />
       {/* ********* Searched products ************ */}
+      <p>{cat}</p>
       { <div className="trending-product-search">
         {all
           .filter(
             (cur) =>
-              cur.name.toLowerCase().includes(Search) ||
-              cur.category.includes(Search) ||
-              cur.desc.includes(Search)
+              cur.name.toLowerCase().includes(Search) 
+              // cur.category.includes(Search) ||
+              // cur.desc.includes(Search)
           )
           .map((elem) => {
             return (

@@ -9,7 +9,7 @@ import {useEffect,useState} from 'react'
 import axios from "axios"
 import{useSelector,useDispatch} from "react-redux"
 import { productActions } from '../Redux/productSlice'
-
+import "./Home.css"
 const Home = ({all}) => {
 
   return (

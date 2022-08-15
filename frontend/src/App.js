@@ -12,14 +12,36 @@ import {useState,useEffect} from "react";
 import {BrowserRouter as Router,Route,Routes,Link} from "react-router-dom"
 import Cart from './components/Cart';
 import API from "./components/API"
+import {useDispatch,useSelector} from "react-redux"
+import {loadAction} from "./Redux/loadingSlice"
+import {CartActions} from "./Redux/cartSlice"
 function App() {
   const [AllProducts, setAllProducts] = useState([])
+  const loading=useSelector((state)=>state.load.load)
+  const [CartCount,setCartCount]=useState("0")
+  const dispatch=useDispatch()
   // https://wood-grains.herokuapp.com/
 useEffect(() => {
-  const data= axios.get(API).then((res)=>{
-   console.log(res.data);
-   setAllProducts(res.data)
-  })
+  const person=window.localStorage.getItem("user")
+  const islogin=window.localStorage.getItem("islogin")
+  const user=JSON.parse(person)
+//  if(islogin==="true"){
+//   const current=user._id
+
+//  }
+ const data= axios.get(API).then((res)=>{
+  console.log(res.data);
+  
+  setAllProducts(res.data)
+  if(res){
+   dispatch(loadAction.change("true"))
+ }
+ })
+ 
+ axios.get(`${API}count`).then((res)=>{
+  console.log(res.data)
+ })
+
 
  }, [])
 
@@ -35,9 +57,10 @@ useEffect(() => {
       <Route exact path="/search" element={<SearchPage all={AllProducts}/>}/>
       <Route exact path="/login" element={<Login all={AllProducts}/>}/>
       <Route exact path="/sign" element={<Signup all={AllProducts}/>}/>
-      <Route exact path="/cart" element={<Cart all={AllProducts}/>}/>
+      <Route exact path="/:userID/cart" element={<Cart all={AllProducts}/>}/>
       <Route exact path="/:id" element={<ProductDetails all={AllProducts}/>}/>
       <Route exact path="/:id/address" element={<AddressPage all={AllProducts}/>}/>
+      <Route exact path="/:userID/cart/:id" element={<ProductDetails all={AllProducts}/>}/>
     </Routes>
   </Router>
  {/* {/* <Home all={AllProducts}/> */}

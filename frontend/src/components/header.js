@@ -1,12 +1,20 @@
 import React,{useState} from 'react'
 import "./header.css"
 import Carousel from 'react-bootstrap/Carousel';
+import {useNavigate} from "react-router-dom"
 const Header = () => {
   const [index, setIndex] = useState(0);
-
+const [cat,setcat]=useState("")
+const navigate=useNavigate()
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
+
   };
+  const handleClick=()=>{
+if(cat==="home"){
+// navigate(`/search/${cat}`)
+}
+  }
   return (
   <>
 <Carousel activeIndex={index} onSelect={handleSelect}>
@@ -20,7 +28,7 @@ const Header = () => {
           <h3>Furniture best for  Home</h3>
           <p>Best stock for the best house.New arrival on outlet</p>
           <section className='header-main-section-four'>
-<button className='btn-shop'>Shop Now </button>
+<button className='btn-shop' onClick={()=>{handleClick();setcat("home")}}>Shop Now </button>
 
     </section>
         </Carousel.Caption>

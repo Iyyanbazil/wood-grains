@@ -1,17 +1,20 @@
 const Product=require("./ProductSchema")
 const User=require("./userSchema")
+const Cart=require("./cartSchema")
+const mongoose=require("mongoose")
+
  const show=async(req,res)=>{
     const all= await Product.find({})
     res.json(all)
-    // res.json({msg:"i am msg"})
-  // console.log();
+ 
 }
+
 const sign=async(req,res)=>{
   const {Fname,Lname,email,password,Cpassword}=req.body
   User.findOne({email:email},(err,user)=>{
     if(user){
       res.send("user exist")
-      console.log("user exist")
+      
     }else{
       User.create({
         Fname:Fname,
@@ -20,24 +23,9 @@ const sign=async(req,res)=>{
         password:password,
         Cpassword:Cpassword,
       })
-      // const user= new User(
-      //   {    
-      //   Fname,
-      //   Lname,
-      //   email,
-      //   password,
-      //   Cpassword,}
-      //   )
-      //   user.save()
         }
-     console.log(user)
     }
   )
-  
-  // const all=await User.insertOne({user})
-  // User.Save()
-  // res.json(user);
-  // console.log(req.body);
 }
 
 const login=async (req,res)=>{
@@ -46,11 +34,8 @@ const login=async (req,res)=>{
     if(user){
       if(user.password===password){
         res.json(user)
-        console.log(user);
-        // res.json(user)
       }else{
         res.send("incorrect password")
-        
         console.log("incorrect password");
       }
     }else{
@@ -59,8 +44,99 @@ const login=async (req,res)=>{
     }
   })
 }
+
+const AddItem = async (req,res)=>{
+const {id,userAdd}=req.body
+const pro=await Product.findOne({_id:id})
+const fill=await Cart.findOne({user:userAdd})
+  if(fill){
+   const newres= await Cart.updateOne({user:userAdd},{$addToSet:{CartData:pro} })
+   if(newres){
+    const find=await Cart.findOne({user:userAdd})
+      if(find){
+       
+        console.log(find.CartData.length)
+        res.json({msg:find.CartData.length})
+        const update= await User.updateOne({_id:userAdd},{$set:{cart:find.CartData.length}})
+      }
+    }
+  
+    const length=fill.CartData.length
+    const tostri=length.toString()
+  }else{
+    const cart=new Cart({
+      user:userAdd,
+      CartData:[]
+    })
+    cart.save()
+  }
+
+}
+
+const getItems=(req,res)=>{
+// const {userID}=req.body
+const {userID}=req.params;
+Cart.findOne({user:userID},(err,user)=>{
+  if(user){
+    res.json(user)
+  }else{
+    res.json({msg:"no user"})
+  }
+})
+// console.log(userID)
+}
+const getCart=(req,res)=>{
+const {current}=req.body
+// console.log(current)
+}
+
+
+const delItem=async (req,res)=>{
+const {ides}=req.body
+const {userID}=req.params
+
+var id = mongoose.Types.ObjectId(ides);
+
+const respi= await Cart.updateOne({user:userID},{$pull:{CartData:{_id:id}}},{ multi: false })
+
+const deli=await Cart.findOne({user:userID})
+if(deli){
+
+  await User.updateOne({_id:userID},{$set:{cart:deli.CartData.length}})
+ 
+    res.json({msg:deli.CartData.length,msg:"deleted from cart"})
+ 
+}
+
+
+
+}
+const Count=async(req,res)=>{
+
+const data=await Cart.findOne({})
+res.json(data)
+}
+const getcount=async (req,res)=>{
+  const {user}=req.body
+  
+ User.findOne({_id:user},(err,user)=>{
+ 
+    if(user){
+      res.json({msg:user.cart})
+      
+    }
+  })
+}
+
 module.exports={
     show,
     sign,
-    login
+    login,
+    AddItem,
+    getItems,
+    getCart,
+    delItem,
+    Count,
+    getcount,
+    // setCart,
 }

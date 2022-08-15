@@ -13,10 +13,15 @@ import { Navbar, NavDropdown, Nav, Container, Button } from "react-bootstrap";
 import {Link} from "react-router-dom"
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
+import CartSlice from "../Redux/cartSlice"
 const Navbars = () => {
   const [SearchVal, setSearchVal] = useState("");
   const [current, setcurrent]=useState({})
   const [loger, setloger] = useState()
+  
+
+  const count=useSelector((state)=>state.count.count)
+  const dispatch = useDispatch();
   useEffect(()=>{
     const data=window.localStorage.getItem("islogin")
     setloger(JSON.parse(data))
@@ -25,11 +30,12 @@ const Navbars = () => {
     setcurrent(JSON.parse(value))
     console.log(value);
     }
-    
-  },[])
+    // dispatch()
+  
+  },[count])
   const url=window.location.pathname
   
-  const dispatch = useDispatch();
+  
   let navigate=useNavigate()
   let location=useLocation()
   const saveSearch = (e) => {
@@ -45,14 +51,16 @@ const Navbars = () => {
     }
    
   };
-
+const changeRoute=()=>{
+  const userId=current._id
+  if(loger===true){
+    navigate(`${userId}/cart`)
+  }else{
+navigate("/login")
+  }
+ 
+}
   const Logout=()=>{
-//     setcurrent({Fname:"",
-//   Lname:"",
-// email:"",
-// password:"",
-// Cpassword:"", })
-
 if(loger===true){
   window.localStorage.setItem("user",JSON.stringify({
     Fname:"",
@@ -64,6 +72,7 @@ Cpassword:"", }))
 }
   window.localStorage.setItem("islogin",false)
     window.location.reload()
+    window.location.pathname="/"
   }
  
   return (
@@ -85,10 +94,16 @@ Cpassword:"", }))
              <button  className="heart-btn-nav" >
               <BsHeart className="heart-icon-nav" />
             </button>
-            <button  className="cart-btn-nav" >
-            {loger===true ?(  <Link to="/cart"><BsCart4 className="cart-icon-nav" /></Link>):( <Link to="/login"><BsCart4 className="cart-icon-nav" /></Link>)}
-           
+            <button  className="cart-btn-nav" 
+            onClick={changeRoute}
+             >
+            {/* {loger===true ?(  <Link  to="/cart"><BsCart4 className="cart-icon-nav" /></Link>):( <Link to="/login"><BsCart4 className="cart-icon-nav" /></Link>)} */}
+            <BsCart4 className="cart-icon-nav" />
             </button> 
+            {loger && (
+  <div className="cart-pro-count"><p className="cart-pro-count-para">{count}</p></div>
+            )}
+          
        
           
           <Navbar.Collapse id="basic-navbar-nav">
