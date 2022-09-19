@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./header.css"
 import Carousel from 'react-bootstrap/Carousel';
 import {useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 const Header = () => {
   const [index, setIndex] = useState(0);
 const [cat,setcat]=useState("")
@@ -10,10 +11,10 @@ const navigate=useNavigate()
     setIndex(selectedIndex);
 
   };
-  const handleClick=()=>{
-if(cat==="home"){
-// navigate(`/search/${cat}`)
-}
+  const handleClick=(id)=>{
+// if(cat==="home"){
+navigate(`/search/${id}`)
+// }
   }
   return (
   <>
@@ -28,7 +29,7 @@ if(cat==="home"){
           <h3>Furniture best for  Home</h3>
           <p>Best stock for the best house.New arrival on outlet</p>
           <section className='header-main-section-four'>
-<button className='btn-shop' onClick={()=>{handleClick();setcat("home")}}>Shop Now </button>
+<button className='btn-shop' onClick={()=>{handleClick("house")}}>Shop Now </button>
 
     </section>
         </Carousel.Caption>
@@ -44,7 +45,7 @@ if(cat==="home"){
         <h3>Looking  for Office use</h3>
           <p>Starting a startup.Wants to buy furniture.WELCOME</p>
           <section className='header-main-section-four'>
-<button className='btn-shop'>Shop Now </button>
+<button className='btn-shop' onClick={()=>{handleClick("office")}}>Shop Now </button>
 
     </section>
         </Carousel.Caption>
@@ -60,7 +61,7 @@ if(cat==="home"){
         <h3>Wants to taste Royality?</h3>
           <p>EveryOne is royal in dreams.Wants to be in real</p>
           <section className='header-main-section-four'>
-<button className='btn-shop'>Shop Now </button>
+<button className='btn-shop' onClick={()=>{handleClick("royal")}}>Shop Now </button>
 
     </section>
         </Carousel.Caption>
@@ -76,7 +77,7 @@ if(cat==="home"){
         <h3>Modern Furniture available </h3>
           <p>For young blood.Amazing quality and asthetic designs</p>
           <section className='header-main-section-four'>
-<button className='btn-shop'>Shop Now </button>
+<button className='btn-shop' onClick={()=>{handleClick("modern")}}>Shop Now </button>
 
     </section>
         </Carousel.Caption>

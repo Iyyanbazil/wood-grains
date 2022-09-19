@@ -74,7 +74,9 @@ Cpassword:"", }))
     window.location.reload()
     window.location.pathname="/"
   }
- 
+ const pager=()=>{
+  navigate("/search")
+ }
   return (
     <>
       <Navbar bg="light" expand="lg" className="Navbar-size">
@@ -91,9 +93,9 @@ Cpassword:"", }))
             <button  className="call-btn-nav" >
              <Link to="/"> <HiOutlinePhoneMissedCall className="call-icon-nav" /></Link>
             </button>
-             <button  className="heart-btn-nav" >
+             {/* <button  className="heart-btn-nav" >
               <BsHeart className="heart-icon-nav" />
-            </button>
+            </button> */}
             <button  className="cart-btn-nav" 
             onClick={changeRoute}
              >
@@ -133,6 +135,7 @@ Cpassword:"", }))
                className="search-nav"
                value={SearchVal}
                onChange={(e) => saveSearch(e)}
+               onFocus={pager}
              /> 
            
                <button  className="search-btn-new" onClick={submitSearch}>

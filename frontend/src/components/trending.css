@@ -7,6 +7,7 @@
         /* margin-left:2rem; */
         padding-left: 20px;
         /* border-radius: 15px; */
+        overflow-y: hidden;
     }
     .trending-sale >p {
     font-size: 0.6rem;
@@ -35,6 +36,7 @@
         height:11.2rem;
         opacity: 0.6;
         margin-bottom: -5rem;
+        overflow-y: hidden;
     }
     .shop-now-trend{
         position: relative;
@@ -46,6 +48,7 @@
         background-color: black;
         color: white;
         border: none;
+        overflow-y: hidden;
        
     }
     .product-name{
@@ -69,6 +72,12 @@
     .trending > h3{
     font-size: 1.4rem;
     font-weight: bolder;
+    }
+    .product-box{
+        overflow-y: hidden;
+    }
+    .product-img-btn{
+        overflow-y: hidden;
     }
    
 }

@@ -14,7 +14,7 @@ import {useDispatch,useSelector} from "react-redux"
 import { loadAction } from '../Redux/loadingSlice';
 import { Skeleton } from '@mui/material';
 import {CartActions} from "../Redux/cartSlice"
-const AllProducts = (props) => {
+const AllProduct = (props) => {
   const [ides,setides]=useState({})
   const [currentID,setcurrentID]=useState("")
   const [alert,setalert]=useState(false)
@@ -95,7 +95,7 @@ Navigate(`/${id}`)
          
              <button className="cart-button-products" onClick={()=>{AddItem(curElem._id);setpres(!pres)}}>Add to Cart <BsCartPlus className="icon-cart-all" /></button>
                
-                <AiOutlineHeart className="icon-heart-all" />
+                {/* <AiOutlineHeart className="icon-heart-all" /> */}
               </div>
               
          </div>
@@ -134,4 +134,4 @@ Navigate(`/${id}`)
   )
 }
 
-export default AllProducts
+export default AllProduct

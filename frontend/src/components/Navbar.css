@@ -91,7 +91,7 @@
         animation-timing-function: linear;
     }
     .nav-disc-div{
-        height:2rem;
+        /* height:2rem; */
         background-color:rgb(234, 96, 46);
     }
     .nav-login-div{
@@ -129,11 +129,14 @@
         background-color: red;
         border: 1px solid red;
         border-radius: 50%;
-        position: relative;
-        top: -2.7rem;
-        left: 24rem;
+        position: absolute;
+       left:24.5rem;
+       top:0.5rem;
+      
         color: white;
         opacity: 0.7;
+        
+
     }
     .cart-pro-count-para{
         margin-top: -0.2rem;

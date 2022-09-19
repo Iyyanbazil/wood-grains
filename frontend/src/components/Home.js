@@ -16,7 +16,7 @@ const Home = ({all}) => {
   <>
   <Header/>
   
-  <Services/>
+  <Services all={all}/>
   <Trending all={all} />
   {/* <NewArrival/> */}
   <AllProduct all={all}/>

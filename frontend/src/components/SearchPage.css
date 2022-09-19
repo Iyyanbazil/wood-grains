@@ -10,15 +10,15 @@
         padding-left: 2rem;
        
         /* border: 1px solid red; */
-        margin-left: 0.5rem;
+        /* margin-left: 0.5rem; */
         margin-right: 0.5rem;
     }
         .products-img-search{
-            width: 15.5rem;
-            height:9rem;
+         width:11rem;
+         height: 13rem;
             /* margin: 20px 20px auto 10px; */
-            margin-top: -2rem;
-            margin-left: 3rem;
+            /* margin-top: -2rem; */
+            margin-left: -1rem;
            
         }
         .product-name-search{
@@ -31,18 +31,18 @@
         }
       
         .product-box-search{
-            border: 1px solid rgb(27, 27, 27);
-            /* box-shadow: 5px 5px 15px  grey; */
-            background-color: white;
-            margin-right: 2rem;
-            margin-bottom: 1rem;
+         margin-top: 2rem;
+         display: grid;
+         grid-template-columns: 10rem 14rem;
+         column-gap: 1rem;
+         margin-left: 1rem;
         }
         .product-box-search >p {
-            margin-left: 0.7rem;
+            /* margin-left: 0.7rem; */
             margin-right: 0.1rem;
         }
         .product-box-search >h6{
-            margin-left: 0.7rem;
+            /* margin-left: 0.7rem; */
             font-weight: bold;
         }
         .product-desc-search{
@@ -115,6 +115,8 @@
      .search-price{
         color: rgb(232, 54, 54);
         font-size: 1.5rem;
+        /* margin-top: -8rem; */
+       
      }
      .sale-search{
         height: 2.5rem;
@@ -155,12 +157,15 @@ border-radius: 15px;
         margin-top: 0.5rem;
      }
      .icon-cart-search{
-        font-size: 2.5rem;
-        margin-left: 2rem;
-        margin-bottom: 0.5rem;
-        margin-top: 0.3rem;
-        cursor: pointer;
-        color: rgb(79, 79, 242);
+      margin-top: 2rem;
+      /* margin-left: 0.5rem; */
+      padding: 0.2rem 0.5rem;
+      font-size: 1rem;
+      margin-right: 1rem;
+      background-color: rgb(243, 96, 96);
+      color: white;
+      border: none;
+      margin-bottom: 1rem;
      }
      .icon-cart-heart{
         font-size: 2.5rem;

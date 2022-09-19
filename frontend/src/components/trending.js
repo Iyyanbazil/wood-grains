@@ -3,6 +3,7 @@ import "./trending.css";
 import Dummy from "./data/dummy";
 import axios from "axios";
 import { useEffect,useState } from "react";
+import {useNavigate} from "react-router-dom"
 import { useSelector } from "react-redux";
 import {Skeleton} from '@mui/material'
 const Trending = ({all}) => {
@@ -15,6 +16,10 @@ const Trending = ({all}) => {
 
   // }, [])
   const loading=useSelector((state)=>state.load.load)
+  const navigate=useNavigate()
+  const routers=(id)=>{
+navigate(`/search/${id}`)
+  }
   return (
     <>
     {loading==="true" && (
@@ -31,11 +36,11 @@ const Trending = ({all}) => {
        <div className="trending-product">
          {all.filter((elem)=>elem.trending===true).map((curElem) => {
            return(
-           <div className="product-box">
-             <section>
+           <div className="product-box" onClick={()=>{routers(curElem.category)}}>
+             <div className="product-img-btn">
              <img   src={curElem.img} className="products-img-trend"/>
              <button className="shop-now-trend">Shop Now</button>
-             </section>
+             </div>
              <h5 className="product-name">{curElem.name}</h5>
            </div>
            )

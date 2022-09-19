@@ -47,7 +47,7 @@
         margin-left: 0.5rem;
         display: grid;
         grid-template-columns: 9rem 9rem 9rem;
-        margin-top: 1rem;
+        margin-top: 0.3rem;
         margin-right: 0.5rem;
     }
     .service-para{
@@ -64,14 +64,17 @@
     }
     .service-disc-tag{
         /* margin-top: -8rem; */
+        overflow-y: hidden;
         width:6rem;
-        height: 2rem;
+        height: 30px;
         padding-left: 0.2rem;
         color: white;
         background-color: red;
-        position: relative;
-        bottom: 8rem;
+        /* position: relative;
+        bottom: 8rem; */
         opacity: 0.8;
+        margin-top: -8rem;
+        margin-bottom: 8rem;
        
     }
     .skel-all-service{
@@ -79,6 +82,9 @@
         grid-template-columns: 8rem 8rem 8rem;
         margin-left: 1rem;
         margin-top: 1rem;
+    }
+    .show-discount{
+        margin-left: 20rem;
     }
 
 }

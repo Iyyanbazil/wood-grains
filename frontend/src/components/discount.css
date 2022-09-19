@@ -1,0 +1,17 @@
+.discount-main-div{
+    margin-top: 2rem;
+display: grid;
+grid-template-columns: 12rem 15rem;
+}
+.discount-main-div-img{
+    width:11rem;
+    height: 13rem;
+}
+.discount-main-div-desc{
+    overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+                line-clamp: 2; 
+        -webkit-box-orient: vertical;
+}

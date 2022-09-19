@@ -7,6 +7,7 @@ import Login from './components/login';
 import Signup from "./components/Signup"
 import ProductDetails from './components/productDetails';
 import AddressPage from './components/AddressPage';
+import AllProduct from './components/allProducts';
 import axios from "axios"
 import {useState,useEffect} from "react";
 import {BrowserRouter as Router,Route,Routes,Link} from "react-router-dom"
@@ -15,6 +16,7 @@ import API from "./components/API"
 import {useDispatch,useSelector} from "react-redux"
 import {loadAction} from "./Redux/loadingSlice"
 import {CartActions} from "./Redux/cartSlice"
+import DiscountPage from './components/DiscountPage';
 function App() {
   const [AllProducts, setAllProducts] = useState([])
   const loading=useSelector((state)=>state.load.load)
@@ -55,10 +57,14 @@ useEffect(() => {
     <Routes>
       <Route exact path="/" element={<Home all={AllProducts} />}/>
       <Route exact path="/search" element={<SearchPage all={AllProducts}/>}/>
+      <Route exact path="/search/:id" element={<SearchPage all={AllProducts}/>}/>
+      {/* <Route exact path="/search/:type" element={<SearchPage all={AllProducts}/>}/> */}
       <Route exact path="/login" element={<Login all={AllProducts}/>}/>
       <Route exact path="/sign" element={<Signup all={AllProducts}/>}/>
+      <Route exact path="/discount" element={<DiscountPage all={AllProducts} />} />
       <Route exact path="/:userID/cart" element={<Cart all={AllProducts}/>}/>
       <Route exact path="/:id" element={<ProductDetails all={AllProducts}/>}/>
+      <Route exact path="/discount/:id" element={<ProductDetails all={AllProducts}/>}/>
       <Route exact path="/:id/address" element={<AddressPage all={AllProducts}/>}/>
       <Route exact path="/:userID/cart/:id" element={<ProductDetails all={AllProducts}/>}/>
     </Routes>

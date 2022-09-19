@@ -13,6 +13,7 @@ const mongoose=require("mongoose")
     img3:String,
     cat:String,
     discount:Boolean,
+    purpose:String,
 
  })
 

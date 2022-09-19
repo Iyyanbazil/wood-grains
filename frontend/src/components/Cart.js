@@ -139,16 +139,19 @@ navigate(`${path}/${id}`)
                 <img src={elem.img} className="cart-img" />
               </div>
               <div className="cart-product-data" onClick={()=>{showDetail(elem._id)}} >
+             
                 <table className="cart-product-table">
                   <tr className="cart-tabel-headers">
                     <th>Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    
                   </tr>
                   <tr className="cart-table-data">
                     <td>{elem.name}</td>
                     <td>{elem.price}</td>
                     <td>1</td>
+                    
                   </tr>
                 </table>
                 <section className="cart-des-section">
@@ -201,7 +204,7 @@ navigate(`${path}/${id}`)
                 
               </div>
               <section>
-                  <button  className="cart-remove-btn" onClick={()=>{clicker(elem._id)}}>
+                  <button  className="cart-remove-btn-before" onClick={()=>{clicker(elem._id)}}>
                     <BsTrash />
                   </button>
                 </section>
