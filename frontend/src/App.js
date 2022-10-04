@@ -57,8 +57,11 @@ useEffect(() => {
     <Routes>
       <Route exact path="/" element={<Home all={AllProducts} />}/>
       <Route exact path="/search" element={<SearchPage all={AllProducts}/>}/>
-      <Route exact path="/search/:id" element={<SearchPage all={AllProducts}/>}/>
-      {/* <Route exact path="/search/:type" element={<SearchPage all={AllProducts}/>}/> */}
+      <Route exact path="/header/:name" element={<SearchPage all={AllProducts}/>}/>
+      <Route exact path="/trending/:name" element={<SearchPage all={AllProducts}/>}/>
+      <Route exact path="/header/:name/:id" element={<ProductDetails all={AllProducts}/>}/>
+      <Route exact path="/trending/:name/:id" element={<ProductDetails all={AllProducts}/>}/>
+      <Route exact path="/search/:id" element={<ProductDetails all={AllProducts}/>}/>
       <Route exact path="/login" element={<Login all={AllProducts}/>}/>
       <Route exact path="/sign" element={<Signup all={AllProducts}/>}/>
       <Route exact path="/discount" element={<DiscountPage all={AllProducts} />} />

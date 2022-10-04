@@ -17,8 +17,8 @@ const Trending = ({all}) => {
   // }, [])
   const loading=useSelector((state)=>state.load.load)
   const navigate=useNavigate()
-  const routers=(id)=>{
-navigate(`/search/${id}`)
+  const routers=(name)=>{
+navigate(`/trending/${name}`)
   }
   return (
     <>

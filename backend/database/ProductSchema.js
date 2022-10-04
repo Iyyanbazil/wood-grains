@@ -6,6 +6,7 @@ const mongoose=require("mongoose")
     price:Number,
     img:String,
     trending:Boolean,
+    new:Boolean,
     rating:Number,
    //  images:[String],
     img1:String,

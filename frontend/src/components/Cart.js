@@ -23,6 +23,7 @@ const Cart = () => {
   const dispatch=useDispatch()
  const navigate=useNavigate()
  const path=window.location.pathname;
+ var newArray=[]
   useEffect(() => {
     const current = window.localStorage.getItem("user");
     const parsed = JSON.parse(current);
@@ -47,7 +48,9 @@ const Cart = () => {
     //  CartSearch()
     });
 const res=axios.post(`${API}${userID}/cart`)
-    
+
+   
+
   }, [alert]);
  window.setTimeout(() =>setalert(false) , 5000);
   // clearTimeout(timer);
@@ -71,7 +74,7 @@ const res=axios.post(`${API}${userID}/cart`)
   const CartSearch = (e) => {
     setsearch(e.target.value.toLowerCase())
     console.log(search)
-
+  
   };
 
   const showDetail=(id)=>{
@@ -126,12 +129,16 @@ navigate(`${path}/${id}`)
       {counter===0 && (
         <h5>Cart is Empty!!</h5>
       )}
-      {search && (
+
+
+
+      {search &&  (
         <div>
 
 {filtered
       .filter((cur)=>cur.name.toLowerCase().includes(search))
-      .map((elem) => {
+      // {
+     .map((elem) => {
         return (
           <>
             <div className="cart-product-div" >
@@ -161,7 +168,7 @@ navigate(`${path}/${id}`)
                 
               </div>
               <section>
-                  <button  className="cart-remove-btn" onClick={()=>{clicker(elem._id)}}>
+                  <button  className="cart-remove-btn-before" onClick={()=>{clicker(elem._id)}}>
                     <BsTrash />
                   </button>
                 </section>

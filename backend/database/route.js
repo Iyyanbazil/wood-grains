@@ -18,5 +18,6 @@ Proute.get("/:userID/cart",getItems)
 Proute.delete("/:userID/cart",delItem)
 Proute.get("/count",Count)
 Proute.post("/count",getcount)
+Proute.post("/search",AddItem)
 module.exports=Proute;
 

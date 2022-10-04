@@ -179,5 +179,7 @@ border-radius: 15px;
      .trending-div-search{
         cursor: pointer;
      }
-     
+     .no-result-div{
+      margin-left: 7rem;
+     }
     }

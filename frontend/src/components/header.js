@@ -11,9 +11,9 @@ const navigate=useNavigate()
     setIndex(selectedIndex);
 
   };
-  const handleClick=(id)=>{
+  const handleClick=(name)=>{
 // if(cat==="home"){
-navigate(`/search/${id}`)
+navigate(`/header/${name}`)
 // }
   }
   return (
