@@ -86,7 +86,19 @@ Cpassword:"", }))
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Link to="/" className="brand-name">Wood-Grains</Link>
-        
+          <div className="navbar-div-desktop">
+         <input
+               placeholder="Search"
+               className="search-nav-desktop"
+               value={SearchVal}
+               onChange={(e) => saveSearch(e)}
+               onFocus={pager}
+             /> 
+           
+               <button  className="search-btn-new" onClick={submitSearch}>
+                 <FaSearch className="search-icon" />
+               </button>
+           </div>
           {/* </LinkContainer> */}
        
         
@@ -112,9 +124,9 @@ Cpassword:"", }))
             <Nav className="me-auto">
              
          
-              <Nav.Link as={NavLink}  to="/">Home</Nav.Link>
-              <Nav.Link href="#link">Contact</Nav.Link>
-              {loger===true ?( <h4>Login as <u>{current.Fname}</u></h4>):(<hr/>)}
+              <Nav.Link as={NavLink}  to="/" className="Nav-home">Home</Nav.Link>
+              <Nav.Link href="#link" className="Nav-contact">Contact</Nav.Link>
+              {loger===true ?( <h4 className="login-as-name">Login as <u>{current.Fname}</u></h4>):(<hr/>)}
              
              <div className="nav-login-div">
               {loger===true ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)}
