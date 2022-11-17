@@ -8,6 +8,7 @@ import Signup from "./components/Signup"
 import ProductDetails from './components/productDetails';
 import AddressPage from './components/AddressPage';
 import AllProduct from './components/allProducts';
+import Contact from './components/contact';
 import axios from "axios"
 import {useState,useEffect} from "react";
 import {BrowserRouter as Router,Route,Routes,Link} from "react-router-dom"
@@ -57,11 +58,12 @@ useEffect(() => {
     <Routes>
       <Route exact path="/" element={<Home all={AllProducts} />}/>
       <Route exact path="/search" element={<SearchPage all={AllProducts}/>}/>
-      <Route exact path="/header/:name" element={<SearchPage all={AllProducts}/>}/>
+      <Route exact path="/header/:head" element={<SearchPage all={AllProducts}/>}/>
       <Route exact path="/trending/:name" element={<SearchPage all={AllProducts}/>}/>
-      <Route exact path="/header/:name/:id" element={<ProductDetails all={AllProducts}/>}/>
-      <Route exact path="/trending/:name/:id" element={<ProductDetails all={AllProducts}/>}/>
+      <Route exact path="/header/:head/:id" element={<ProductDetails all={AllProducts}/>}/>
+    <Route exact path="/trending/:name/:id" element={<ProductDetails all={AllProducts}/>}/>
       <Route exact path="/search/:id" element={<ProductDetails all={AllProducts}/>}/>
+      <Route exact path="/contact" element={<Contact all={AllProducts}/>}/>
       <Route exact path="/login" element={<Login all={AllProducts}/>}/>
       <Route exact path="/sign" element={<Signup all={AllProducts}/>}/>
       <Route exact path="/discount" element={<DiscountPage all={AllProducts} />} />

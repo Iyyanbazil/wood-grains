@@ -36,9 +36,11 @@ navigate(`/${id}`)
       <p>{curElem.name}</p>
      })} */}
      
-     {all.filter((curElem)=>curElem.discount===true).slice(2,5).map((elem,index)=>{
+     {all.filter((curElem)=>curElem.discount===true).slice(0,6)
+    //  .slice(2,5)
+     .map((elem,index)=>{
       return(
-        <div>
+        <div className="single-disc">
           <img className="service-discount-img" src ={elem.img} onClick={()=>{detailer(elem._id)}} />
           <div className="service-disc-tag">
           <p>Discount on</p>

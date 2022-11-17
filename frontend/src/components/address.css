@@ -1,127 +1,295 @@
-.buyed-product-main{
-    display: flex;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 1rem;
-    border: 1px solid black;
-    padding-left: 0.5rem;
-    border-radius: 10px;
-    background-color: rgb(243, 243, 219);
-}
-.pur-pro-heading-buy{
-    margin-left: 1rem;
-    margin-top: 1rem;
-    text-decoration: underline;
-}
-.buyed-product-img{
-height:7rem;
-width: 10rem;
-margin-top: 1rem;
 
-     
-}
-.buyed-product-name{
-    text-transform: uppercase;
-    margin-left: 1rem;
-    font-size: 1rem;
-}
-.buyed-product-price{
-    margin-left: 1rem;
-}
-.buyed-product-desc{
-    overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* number of lines to show */
-                line-clamp: 2; 
-        -webkit-box-orient: vertical;
-        font-size: 0.6rem;
+@media (max-width:430px){
+    .buyed-product-main{
+        display: flex;
         margin-left: 1rem;
-}
-.address-input-buyed{
-    width: 93%;
-    height: 2.5rem;
-    margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        border: 1px solid black;
+        padding-left: 0.5rem;
+        border-radius: 10px;
+        background-color: rgb(243, 243, 219);
+    }
+    .pur-pro-heading-buy{
+        margin-left: 1rem;
+        margin-top: 1rem;
+        text-decoration: underline;
+    }
+    .buyed-product-img{
+    height:7rem;
+    width: 10rem;
     margin-top: 1rem;
-    border: 1px solid rgb(172, 172, 5);
-    border-radius: 10px;
-    padding-left: 0.5rem;
-}
-.delivery-div-main{
-    margin-top: 2rem;
-    /* margin-left: 1rem; */
-    background-color: rgb(243, 243, 219);
-    /* border: 1px solid black; */
-    padding-left: 0.5rem;
-    padding-top: 1rem;
     
-    padding-bottom: 1.5rem;
-    border-radius: 10px;
-    text-decoration: underline;
+         
+    }
+    .buyed-product-name{
+        text-transform: uppercase;
+        margin-left: 1rem;
+        font-size: 1rem;
+    }
+    .buyed-product-price{
+        margin-left: 1rem;
+    }
+    .buyed-product-desc{
+        overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+                    line-clamp: 2; 
+            -webkit-box-orient: vertical;
+            font-size: 0.6rem;
+            margin-left: 1rem;
+    }
+    .address-input-buyed{
+        width: 93%;
+        height: 2.5rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        border: 1px solid rgb(172, 172, 5);
+        border-radius: 10px;
+        padding-left: 0.5rem;
+    }
+    .delivery-div-main{
+        margin-top: 2rem;
+        /* margin-left: 1rem; */
+        background-color: rgb(243, 243, 219);
+        /* border: 1px solid black; */
+        padding-left: 0.5rem;
+        padding-top: 1rem;
+        
+        padding-bottom: 1.5rem;
+        border-radius: 10px;
+        text-decoration: underline;
+    }
+    .buyed-cash-main{
+        display: flex;
+        padding-left: 2rem;
+        margin-top: 2rem;
+        
+    }
+    .buyed-cash-jazz{
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-right: 2rem;
+        /* margin-left: 2rem; */
+    }
+    .buyed-cash-easypaisa{
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid black;
+        margin-right: 2rem;
+        border-radius: 10px;
+    }
+    .buyed-cash-delivery{
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid black;
+        margin-right: 2rem;
+        border-radius: 10px;
+    }
+    .active-payment{
+        height: 5rem;
+        width: 5rem;
+        border: 2px solid red;
+        box-shadow: 10px 40px 20px 20px rgba(165, 42, 42, 0.389);
+        margin-right: 2rem;
+        border-radius: 10px;
+        /* margin-left: 2rem; */
+    }
+    .add-info-buy{
+        margin-top: 2rem;
+        padding-left: 1rem;
+    }
+    .add-info-buy > textarea{
+        width: 85%;
+        height: 6rem;
+        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+    .payment-div-buy{
+        margin-left: 0.7rem;
+        margin-top: 1rem;
+        /* text-decoration: underline; */
+        background-color: rgba(165, 42, 42, 0.152);
+        width: 25rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+    }
+    .submit-btn-buy{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+        
+    }
+    .submit-btn-buy-button{
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        background-color: rgb(165, 165, 63);
+        color: white;
+        border: none;
+    }
 }
-.buyed-cash-main{
-    display: flex;
-    padding-left: 2rem;
-    margin-top: 2rem;
-    
-}
-.buyed-cash-jazz{
-    height: 5rem;
-    width: 5rem;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin-right: 2rem;
-    /* margin-left: 2rem; */
-}
-.buyed-cash-easypaisa{
-    height: 5rem;
-    width: 5rem;
-    border: 1px solid black;
-    margin-right: 2rem;
-    border-radius: 10px;
-}
-.buyed-cash-delivery{
-    height: 5rem;
-    width: 5rem;
-    border: 1px solid black;
-    margin-right: 2rem;
-    border-radius: 10px;
-}
-.active-payment{
-    height: 5rem;
-    width: 5rem;
-    border: 2px solid red;
-    box-shadow: 10px 10px 10px 10px grey;
-    margin-right: 2rem;
-    border-radius: 10px;
-    /* margin-left: 2rem; */
-}
-.add-info-buy{
-    margin-top: 2rem;
-    padding-left: 1rem;
-}
-.add-info-buy > textarea{
-    width: 85%;
-    height: 6rem;
-    margin-left: 1rem;
-    padding-left: 1rem;
-    padding-top: 1rem;
-}
-.payment-div-buy{
-    margin-left: 1rem;
+
+/* ******************** Desktop view ******************** */
+@media (min-width:1000px){
+    .buyed-product-main{
+        display: flex;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        border: 1px solid black;
+        padding-left: 0.5rem;
+        border-radius: 10px;
+        background-color: rgba(240, 240, 15, 0.147);
+    }
+    .grid-div{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .pur-pro-heading-buy{
+        margin-left: 1rem;
+        margin-top: 1rem;
+        /* text-decoration: underline; */
+    }
+    .buyed-product-img{
+    height:7rem;
+    width: 10rem;
     margin-top: 1rem;
-    text-decoration: underline;
-}
-.submit-btn-buy{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
     
-}
-.submit-btn-buy-button{
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    background-color: rgb(165, 165, 63);
-    color: white;
-    border: none;
+         
+    }
+    
+    .buyed-product-name{
+        text-transform: uppercase;
+        margin-left: 1rem;
+        font-size: 1.5rem;
+        font-family:sans-serif;
+    }
+    .buyed-product-price{
+        margin-left: 1rem;
+        background-color: rgba(128, 128, 128, 0.427);
+        width: 6rem;
+        padding-left: 1rem;
+        border-radius: 1rem;
+    }
+    .buyed-product-desc{
+        overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+                    line-clamp: 2; 
+            -webkit-box-orient: vertical;
+            font-size: 0.6rem;
+            margin-left: 1rem;
+    }
+    .delivery-info-head{
+        margin-left: 3rem;
+        overflow: hidden;
+    }
+    .address-input-buyed{
+        width: 80%;
+        height: 2.5rem;
+        margin-left: 3rem;
+        margin-top: 1rem;
+        border: 1px solid rgb(5, 172, 164);
+        border-radius: 10px;
+        padding-left: 0.5rem;
+    }
+    .delivery-div-main{
+        margin-top: 2rem;
+        /* margin-left: 1rem; */
+        background-color: rgb(243, 243, 219);
+        /* border: 1px solid black; */
+        padding-left: 0.5rem;
+        padding-top: 1rem;
+        
+        padding-bottom: 1.5rem;
+        border-radius: 10px;
+        text-decoration: underline;
+        margin-left: 5rem;
+    }
+    .buyed-cash-main{
+        display: flex;
+        padding-left: 2rem;
+        margin-top: 3rem;
+        
+    }
+    .buyed-cash-jazz{
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-right: 2rem;
+        /* margin-left: 2rem; */
+    }
+    .buyed-cash-easypaisa{
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid black;
+        margin-right: 2rem;
+        border-radius: 10px;
+    }
+    .buyed-cash-delivery{
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid black;
+        margin-right: 2rem;
+        border-radius: 10px;
+    }
+    .payment-method-heading{
+        margin-top: 1rem;
+        margin-left: 2rem;
+        overflow: hidden;
+    }
+    .active-payment{
+        height: 5rem;
+        width: 5rem;
+        border: 2px solid red;
+        box-shadow: 10px 10px 10px 10px grey;
+        margin-right: 2rem;
+        border-radius: 10px;
+        /* margin-left: 2rem; */
+    }
+    .add-info-buy{
+        margin-top: 2rem;
+        padding-left: 1rem;
+    }
+    .additional-heading{
+        margin-left: 3rem;
+        overflow: hidden;
+    }
+    .add-info-buy > textarea{
+        width: 85%;
+        height: 6rem;
+        margin-left: 3rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+    .payment-div-buy{
+        margin-left: 1rem;
+        margin-top: 2rem;
+        /* text-decoration: underline; */
+        /* border: 1px solid red; */
+        height: 15rem;
+        width: 30rem;
+        background-color: rgba(165, 42, 42, 0.152);
+    }
+    .submit-btn-buy{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+        
+    }
+    .submit-btn-buy-button{
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        background-color: rgb(165, 165, 63);
+        color: white;
+        border: none;
+    }
+   
 }

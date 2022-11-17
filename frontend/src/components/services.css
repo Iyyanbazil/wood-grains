@@ -1,12 +1,39 @@
 /* *{
     margin-left: 1rem;
 } */
-@media only screen and  (max-width:412px){
+@keyframes discount{
+0%{
+opacity: 0;
+}
+20%{
+    opacity: 0.2;
+}
+40%{
+    opacity: 0.4;
+}
+60%{
+    opacity: 0.6;
+}
+80%{
+    opacity: 0.8;
+}
+100%{
+    opacity: 1;
+}
+
+
+}
+/* @media  (max-width:430px){
     .service-header{
-        width:18rem;
-        /* display: flex; */
         margin-top: 2rem;
-        margin-left: 5.7rem;
+        width:85%;
+        margin-top: 2rem;
+        margin-left: 6rem;
+       padding-top: 0.2rem;
+        font-family:fantasy;
+        color: rgb(189, 71, 71);
+        border: 3px solid black;
+         border-radius: 20rem 0rem 20rem 0rem;
     }
     .service-header > h3{
     font-size: 1.2rem;
@@ -24,39 +51,41 @@
     .service-para{
         font-size: 0.7rem;
         font-weight: bold;
-        /* margin-left: -0.8rem; */
+        
     }
 
-}
-@media only screen and  (max-width:512px){
+} */
+@media   (max-width:430px){
     .service-header{
-        width:20rem;
-        /* display: flex; */
         margin-top: 2rem;
-        margin-left: 7rem;
+        width: 55%;
+        margin-top: 2rem;
+        margin-left: 6rem;
+       padding-left: 1.5rem;
+       padding-top: 0.2rem;
+        font-family:fantasy;
+        color: rgb(189, 71, 71);
+        border: 3px solid black;
+         border-radius: 20rem 0rem 20rem 0rem;
     }
     .service-header > h3{
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: 1.2rem;
     }
     .service-header > p{
-        font-size: 1rem;
+        font-size: 0.8rem;
         }
     
     .service-main{
         margin-left: 0.5rem;
         display: grid;
-        grid-template-columns: 9rem 9rem 9rem;
-        margin-top: 0.3rem;
-        margin-right: 0.5rem;
+        grid-template-columns: 8.5rem 8.5rem 8.5rem;
+        margin-top: 1rem;
     }
     .service-para{
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: bold;
-        margin-left: 0.5rem;
-        margin-right: 1rem;
-        margin-top: -2rem;
-        /* margin-bottom: 2rem; */
+        margin-left: 1rem;
+        margin-top: -1rem;
     }
     .service-discount-img{
         height: 8rem;
@@ -75,6 +104,11 @@
         opacity: 0.8;
         margin-top: -8rem;
         margin-bottom: 8rem;
+        animation-name: discount;
+        animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 0 1rem 1rem 0;
        
     }
     .skel-all-service{
@@ -85,6 +119,88 @@
     }
     .show-discount{
         margin-left: 20rem;
+    }
+    .single-disc{
+        margin-left:0.52rem
+    }
+
+}
+@media only screen and  (min-width:1000px){
+    .service-header{
+        overflow: hidden;
+        width:20%;
+        height: 2rem;
+        padding: 0rem 1rem;
+        /* display: flex; */
+        margin-top: 2rem;
+        margin-left: 30rem;
+       
+        font-family:fantasy;
+        color: rgb(189, 71, 71);
+        border: 3px solid black;
+         border-radius: 20rem 0rem 20rem 0rem;
+       
+    }
+    /* .service-header:hover{
+    border-radius: 20rem 0rem 20rem 0rem;
+    } */
+    .service-header > h3{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    }
+    .service-header > p{
+        font-size: 1rem;
+        }
+    
+    .service-main{
+        margin-left: 8.5rem;
+        display: grid;
+        grid-template-columns: 9rem 9rem 9rem 9rem 9rem 9rem;
+        margin-top: 0.3rem;
+        margin-right: 0.5rem;
+    }
+    .service-para{
+        font-size: 1.2rem;
+        /* font-weight: bold; */
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: -2rem;
+        /* margin-bottom: 2rem; */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .service-discount-img{
+        height: 8rem;
+        width: 8rem;
+    }
+    .service-disc-tag{
+        /* margin-top: -8rem; */
+        animation-name: discount;
+        animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 0 1rem 1rem 0;
+        overflow-y: hidden;
+        width:6rem;
+        height: 30px;
+        padding-left: 0.2rem;
+        color: white;
+        background-color: red;
+        /* position: relative;
+        bottom: 8rem; */
+        opacity: 0.8;
+        margin-top: -8rem;
+        margin-bottom: 8rem;
+       
+       
+    }
+    .skel-all-service{
+        display: grid;
+        grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    .show-discount{
+        margin-left: 60rem;
     }
 
 }

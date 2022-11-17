@@ -10,7 +10,7 @@
    padding-top: 1rem;
    opacity: 0.9;
 }
-#password{
+#password-login{
     margin-left: 1rem;
     height: 2.5rem;
     width: 20rem;
@@ -19,7 +19,7 @@
     padding-left: 1rem;
     border-radius: 20px;
 }
-#email{
+#email-login{
     margin-left: 1rem;
     height: 2.5rem;
     width: 20rem;
@@ -44,40 +44,148 @@
 .login-login-div{
     margin-left: 2.5rem;
 }
-.login-btn{
-    padding: 0.4rem 6.5rem;
+.login-btn-account{
+    padding: 0.4rem 2.5rem;
     background-color: rgb(241, 106, 57);
     color: white;
     border: none;
     border-radius: 15px;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    margin-left:7rem;
 }
-.login-main-head{
+.login-main-head-acc{
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    margin-top: -1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-family: cursive;
+    overflow: hidden;
 }
 .login-or-div > p{
-    margin-left: 12rem;
-    margin-top: 2rem;
+    margin-left: 11rem;
+    margin-top: 1rem;
 }
-.login-btn-google{
-    margin-left: 2rem;
-    padding: 0.4rem 6.5rem;
+.login-btn-google-acc{
+    margin-left: 5rem;
+    padding: 0.4rem 2.5rem;
     /* background-color: rgb(241, 106, 57); */
     /* color: white; */
     border: none;
     border-radius: 15px;
-    font-size: 2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
-    width: 85%;
+    /* width: 85%; */
 }
 .login-google{
     font-size: 4rem;
 }
-
+.login-banner{
+    display: none;
+}
 
 }
+
+/* **************** Desktop view ********* */
+
+@media only screen and  (min-width:1000px){
+   
+    .email-pass-div{
+        /* border: 2px solid black; */
+        margin-top: 3rem;
+        /* box-shadow: 10px 10px 10px 10px grey; */
+        border-radius: 1.5rem;
+       margin-left: 1rem;
+       width: 85%;
+       padding-top: 1rem;
+       opacity: 0.9;
+    }
+    .email-label{
+        margin-left: 5rem;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    .password-label{
+         margin-left: 5rem;
+        font-size: 1.5rem;
+    }
+    #password-login{
+        margin-left: 1rem;
+        height: 2rem;
+        width: 15rem;
+        position: relative;
+        bottom: 0.4rem;
+        padding-left: 1rem;
+        border-radius: 20px;
+    }
+    #email-login{
+        margin-left: 4.5rem;
+        height: 2rem;
+        width: 15rem;
+        position: relative;
+        bottom: 0.4rem;
+        padding-left: 1rem;
+        border-radius: 20px;
+    }
+    
+    .login-forget-pass{
+        margin-left: 16rem;
+        color: blue;
+    }
+    .login-login-div-account{
+        margin-left: 10rem;
+        
+    }
+    .login-btn-account{
+        padding: 0.4rem 2.5rem;
+        background-color: rgb(241, 106, 57);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        /* margin-left: -15rem; */
+        margin-left: 3rem;
+        
+    }
+    .login-btn-account:hover{
+        background-color: rgba(241, 106, 57, 0.432);
+    }
+    .login-main-head-acc{
+        
+        font-size: 2rem;
+       margin-left: 10rem;
+       margin-bottom: 2rem;
+        
+    }
+    .login-or-div > p{
+        margin-left: 16rem;
+        /* margin-top: -3.4rem; */
+    }
+    .login-btn-google-acc{
+      
+        padding: 0.2rem 1rem;
+      
+        border: none;
+        border-radius: 15px;
+        font-size: 1.5rem;
+       margin-left: 11rem;
+       
+    }
+    .login-btn-google-acc:hover{
+        background-color: rgba(128, 128, 128, 0.366);
+    }
+    .login-google{
+        font-size: 2rem;
+    }
+    .login-main-grid-div{
+        display: grid;
+        grid-template-columns: 30% 70%;
+        
+    }
+    .login-banner{
+        height: 30rem;
+        width: 100%;
+    }
+    }

@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <>
     <div className='footer-main'>
-        <h3>Wood-Grains</h3>
+        <h3 className="footer-heading">Wood-Grains</h3>
+        <p className='footer-desc'>All right reserved</p>
     </div>
     </>
   )

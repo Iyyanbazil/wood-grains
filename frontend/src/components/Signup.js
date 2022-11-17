@@ -70,14 +70,14 @@ const Signup = () => {
           <input id="password" type="password" placeholder="12345678" name="Cpassword" value={user.Cpassword} onChange={(e)=>setData(e)} />
         </section>
        
-        <section className="login-login-div">
-          <button className="login-btn" onClick={handleSubmit}>Create</button>
+        <section className="sign-login-div">
+          <button className="login-btn-sign" onClick={handleSubmit}>Create</button>
         </section>
       </div>
       <section className="login-or-div-sign">
         <p>OR</p>
-        <button className="login-btn-google">
-           with <FcGoogle className="login-google" />
+        <button className="sign-btn-google">
+           SignUp with <FcGoogle className="login-google" />
         </button>
       </section>
     </div>

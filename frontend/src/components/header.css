@@ -63,6 +63,75 @@
         border: none;
         border-radius: 2px;
     }
+    .crousel-img{
+        width:100%;
+        height:14rem;
+    }
+
+}
+
+@media only screen and  (min-width:1000px){
+
+    .header-main{
+        /* background-image: url("/public/images/1.jpg"); */
+        animation-name: imager;
+        animation-timing-function: 2s;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+         width:24rem;
+        opacity: 0.8;
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        border-radius: 20px;
+        margin-left: 1.8rem;
+        margin-right: 3.8rem;
+    }
+    
+    .header-main-section-one{
+        font-size: 0.6rem;
+        /* border: 1px solid black; */
+        width: 11rem;
+        padding: 0.2rem;
+        border-radius: 2rem;
+        background-color: pink;
+    }
+    .crousel-img{
+        width:100%;
+        height:20rem;
+        overflow: hidden;
+    }
+    .sale-span{
+        /* border: 1px solid black; */
+        border-radius: 2rem;
+        height: 2rem;
+        background-color: rgb(234, 169, 49);
+        color: white;
+        font-weight: bold;
+        /* padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        padding: right 0.3rem; */
+        padding: 0.3rem;
+    
+    }
+    .discount-span{
+        margin-left: 0.5rem;
+    }
+    .header-main-section-two{
+        width: 14rem;
+    }
+    .header-main-section-third{
+        /* font-weight: lighter; */
+        color: rgb(222, 219, 219);
+        font-weight: bolder;
+    }
+    .btn-shop{
+        padding: 5px 10px 5px 10px;
+        color: white;
+        background-color: rgb(244, 102, 102);
+        border: none;
+        border-radius: 2px;
+    }
 
 
 }

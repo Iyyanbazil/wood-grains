@@ -1,0 +1,188 @@
+
+@media (max-width:430px){
+    .contact-main-div{
+        /* background-color: rgba(127, 255, 212, 0.337); */
+    
+        background-image: url("./contact.jpg");
+        background-repeat: no-repeat;
+       background-size: cover;
+        
+    }
+   
+    .contact-main-heading{
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    background-color: white;
+    width: 9rem;
+    padding-left: 0.5rem;
+    border-radius: 1rem;
+    margin-top: 0.6rem;
+    }
+
+    .contact-desc{
+        margin-left: 1.5rem;
+        margin-right: 11rem;
+        font-size: 1rem;
+        font-family: monospace;
+    }
+    .complain-main-head{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .complain-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(127, 255, 212, 0.416);
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        width: 20rem;
+        margin-left: 3rem;
+        border-radius: 3rem;
+        margin-top: 2rem;
+    }
+    .complain-textarea{
+        width: 15rem;
+        height: 6rem;
+    }
+    .complain-input{
+        width: 15rem;
+    }
+    .label{
+        font-weight: bold;
+    }
+    .find-main-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 192, 203, 0.381);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 20rem;
+        margin-left: 3rem;
+        border-radius: 3rem;
+        margin-top: 2rem;
+
+    }
+    .find-main-head{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .return-heading{
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+    .policy-desc{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+/* *********** Desktop view ********** */
+
+@media (min-width:1000px){
+    .contact-main-div{
+        /* background-color: rgba(127, 255, 212, 0.337); */
+    
+        background-image: url("./contact.jpg");
+        background-repeat: no-repeat;
+       background-size: cover;
+        height: 10rem;
+    }
+    .desktop-grid-div{
+        display: grid;
+        grid-template-columns: 50% 50%;
+     }
+    .contact-main-heading{
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    background-color: white;
+    width: 9rem;
+    padding-left: 0.5rem;
+    border-radius: 1rem;
+    margin-top: 0.6rem;
+    }
+    .contact-desc{
+        margin-left: 1.5rem;
+        margin-right: 11rem;
+        font-size: 1rem;
+        font-family: monospace;
+    }
+    .complain-main-head{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .complain-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(127, 255, 212, 0.416);
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        width: 20rem;
+        margin-left: 3rem;
+        border-radius: 3rem;
+        margin-top: 3rem;
+        margin-left: 15rem;
+        
+    }
+    .complain-textarea{
+        width: 15rem;
+        height: 6rem;
+    }
+    .complain-input{
+        width: 15rem;
+    }
+    .label{
+        font-weight: bold;
+    }
+    .find-main-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 192, 203, 0.381);
+        
+        padding-bottom: 1rem;
+        width: 20rem;
+        margin-left: 3rem;
+        border-radius: 3rem;
+        margin-top: 2rem;
+
+    }
+    .find-main-head{
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .return-heading{
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        margin-left: 13rem;
+    }
+    .policy-desc{
+        margin-left: 13rem;
+        margin-right: 10rem;
+    }
+}

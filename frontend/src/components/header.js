@@ -11,9 +11,9 @@ const navigate=useNavigate()
     setIndex(selectedIndex);
 
   };
-  const handleClick=(name)=>{
+  const handleClick=(head)=>{
 // if(cat==="home"){
-navigate(`/header/${name}`)
+navigate(`/header/${head}`)
 // }
   }
   return (
@@ -21,7 +21,7 @@ navigate(`/header/${name}`)
 <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block  crousel-img"
           src="/images/1.jpg"
           alt="First slide"
         />
@@ -36,7 +36,7 @@ navigate(`/header/${name}`)
       </Carousel.Item >
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block  crousel-img"
           src="/images/crousel 1.jpg"
           alt="Second slide"
         />
@@ -52,7 +52,7 @@ navigate(`/header/${name}`)
       </Carousel.Item>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block  crousel-img"
           src="/images/crousel 2.jpg"
           alt="Third slide"
         />
@@ -68,7 +68,7 @@ navigate(`/header/${name}`)
       </Carousel.Item>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
+          className="d-block crousel-img"
           src="/images/crousel 3.jpg"
           alt="Third slide"
         />

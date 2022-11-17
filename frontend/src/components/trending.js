@@ -22,26 +22,51 @@ navigate(`/trending/${name}`)
   }
   return (
     <>
-    {loading==="true" && (
+    {/* {loading==="true" && (
  <div className="trending-sale">
  <p>Summer Sale is currenty on </p>
+
 </div>
-    )}
+    )} */}
+    <img src="./images/saleGif.gif" height="160rem" width="800rem" className="sale-gif" />
      
-      <div className="trending-header"><h3>Trending Products</h3></div>
+      <div className="trending-header">
+        <h4>Trending Products</h4>
+        </div>
       {loading==="true" ?(
       <>
       <div className="trending-products-main">
        
-       <div className="trending-product">
-         {all.filter((elem)=>elem.trending===true).map((curElem) => {
+       <div className="trending-product mobile-view">
+         {all.filter((elem)=>elem.trending===true).slice(1,4).map((curElem) => {
            return(
            <div className="product-box" onClick={()=>{routers(curElem.category)}}>
+            <div>
              <div className="product-img-btn">
              <img   src={curElem.img} className="products-img-trend"/>
              <button className="shop-now-trend">Shop Now</button>
              </div>
              <h5 className="product-name">{curElem.name}</h5>
+             </div>
+           </div>
+           )
+         })}
+         {/* <section className='trending-product-first'>
+
+<p>first</p>
+   </section> */}
+       </div>
+       <div className="trending-product desktop-view">
+         {all.filter((elem)=>elem.trending===true).map((curElem) => {
+           return(
+           <div className="product-box" onClick={()=>{routers(curElem.category)}}>
+            <div>
+             <div className="product-img-btn">
+             <img   src={curElem.img} className="products-img-trend"/>
+             <button className="shop-now-trend">Shop Now</button>
+             </div>
+             <h5 className="product-name">{curElem.name}</h5>
+             </div>
            </div>
            )
          })}

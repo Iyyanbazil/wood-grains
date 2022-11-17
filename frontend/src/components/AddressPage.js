@@ -35,9 +35,11 @@ const AddressPage = ({all}) => {
         </>
       )
     })}
+<div className='grid-div'>
+
 
     <div className='delivery-div-main'>
-    <h3>Delivery Information</h3>
+    <h3 className='delivery-info-head'>Delivery Information</h3>
     {/* <p>Full Name</p> */}
       <input className='address-input-buyed' placeholder='Full Name' type="text" />
       {/* <p>Email</p> */}
@@ -49,7 +51,7 @@ const AddressPage = ({all}) => {
       <input className='address-input-buyed'  placeholder='Address 2' type="text" />
     </div>
     <div className='payment-div-buy'>
-      <h3>Payment Method</h3>
+      <h3 className="payment-method-heading">Payment Method</h3>
       <div className='buyed-cash-main'>
         <img className={active==="jazz" ?("active-payment"):("buyed-cash-jazz")} src="/images/jazz.jpg" onClick={()=>{setactive("jazz")}} />
         {/* <p>{active}</p> */}
@@ -58,10 +60,10 @@ const AddressPage = ({all}) => {
       </div>
     </div>
 <div className='add-info-buy'>
-    <h3>Additional Information(optional)</h3>
+    <h3 className='additional-heading'>Additional Information(optional)</h3>
     <textarea placeholder='leave comment'/>
     </div>
-
+    </div>
     <div className='submit-btn-buy'>
       <button className='submit-btn-buy-button'>Submit</button>
     </div>

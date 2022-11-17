@@ -11,6 +11,9 @@ import API from "./API";
 import axios from "axios";
 import {Skeleton} from "@mui/material"
 import {useNavigate} from "react-router-dom"
+import {FcApproval} from "react-icons/fc"
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 const Cart = () => {
   const { userID } = useParams();
   const [counter, setcounter] = useState(0)
@@ -20,10 +23,17 @@ const Cart = () => {
   const [search,setsearch]=useState("")
   const [filtered,setfiltered]=useState([{}])
  const [carter,setcarter]=useState(false)
+ const [spinner,setspinner]=useState(false)
+ const [pres,setpres]=useState(false)
   const dispatch=useDispatch()
  const navigate=useNavigate()
  const path=window.location.pathname;
  var newArray=[]
+ useEffect(() => {
+  setTimeout(() => {
+    setpres(false);
+  }, 3000);
+}, [pres])
   useEffect(() => {
     const current = window.localStorage.getItem("user");
     const parsed = JSON.parse(current);
@@ -58,12 +68,15 @@ const res=axios.post(`${API}${userID}/cart`)
     window.reload()
   }
   const clicker = (ides) => {
+    setspinner(true)
     // const obj=JSON.parse(ides)
     axios.delete(`${API}${userID}/cart`,{data:{ides:ides}}).then((res)=>{
       if(res){
         setalert(true)
         // window.setTimeout(reload(),4000)
        setcarter(!carter)
+       setspinner(false)
+       setpres(true)
       }
       console.log(res)
     })
@@ -99,6 +112,21 @@ navigate(`${path}/${id}`)
           </button>
         </section>
       </div>
+
+      <div className={pres ? ("alert-div-active"):("alert-div-closed")}>
+<p>Delete from Cart <FcApproval size="2rem"/></p>
+    </div>
+    <div className={spinner ? ("active-spinner"):("disable-spinner")}>
+    <Button variant="primary" disabled>
+        <Spinner
+          as="span"
+          animation="border"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+</Button>{' '}
+    </div>
       {loading &&(
     <div>
 <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
@@ -121,11 +149,11 @@ navigate(`${path}/${id}`)
 </div>
 </div>
     )}
-      {alert && (
+      {/* {alert && (
         <Alert variant="success">
        Deleted from cart
       </Alert>
-      )}
+      )} */}
       {counter===0 && (
         <h5>Cart is Empty!!</h5>
       )}

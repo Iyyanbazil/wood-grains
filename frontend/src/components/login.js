@@ -48,32 +48,39 @@ const Login = () => {
     }
   return (
    <>
-   
-        <div className="email-pass-div">
+   <div className='login-main-grid-div'>
+    <div>
+        <img src="./images/loginBanner.gif"className="login-banner" />
+    </div>
+   <div className="email-pass-div">
             {/* <h1>{currentUser.Fname}</h1>
             <p>{isLogin}</p> */}
-            <h3 className='login-main-head'>Login Account</h3>
+            <h3 className='login-main-head-acc'>Login Account</h3>
             <section className='email-section'>
         <label for="email" className='email-label'>Email</label>
-        <input id="email" name="email" value={login.email} onChange={(e)=>handleChange(e)} placeholder='Example@abc.com' />
+        <input id="email-login" name="email" value={login.email} onChange={(e)=>handleChange(e)} placeholder='Example@abc.com' />
         </section>
         <section className='email-section'>
 
         <label  className='password-label'>Password</label>
-        <input id="password" name="password" value={login.password} onChange={(e)=>handleChange(e)}  type="password" placeholder="12345678"/>
+        <input id="password-login" name="password" value={login.password} onChange={(e)=>handleChange(e)}  type="password" placeholder="12345678"/>
         </section>
         <section className='login-forget-pass'>
             <p>Forgot Password?</p>
         </section>
-        <section className='login-login-div'>
-            <button className='login-btn' onClick={()=>{handleSubmit()}}>Login</button>
+        <section className='login-login-div-account'>
+            <button className='login-btn-account' onClick={()=>{handleSubmit()}}>Login</button>
         </section>
-       
-        </div>
         <section className='login-or-div'>
             <p>OR</p>
-            <button className='login-btn-google' >Login with <FcGoogle className='login-google'/></button>
+            <button className='login-btn-google-acc' >Login with <FcGoogle className='login-google'/></button>
         </section>
+        </div>
+        
+   </div>
+   
+        
+        
    
         </>
   )

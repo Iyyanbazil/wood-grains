@@ -74,6 +74,15 @@ Cpassword:"", }))
     window.location.reload()
     window.location.pathname="/"
   }
+  const loginRoute=(name)=>{
+    if(name==="login"){
+      navigate("/login")
+    }
+    if(name==="sign"){
+      navigate("/sign")
+    }
+    
+  }
  const pager=()=>{
   navigate("/search")
  }
@@ -85,7 +94,10 @@ Cpassword:"", }))
           {/* <Navbar.Brand href="#home" className="brand-name">Wood-Grains</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-          <Link to="/" className="brand-name">Wood-Grains</Link>
+          <Link to="/" className="brand-name"><img src="./images/circleLogo.png" width="64rem" height="64rem" /> WoodGrains</Link>
+          {url!== "/cart" && 
+        (
+          <>
           <div className="navbar-div-desktop">
          <input
                placeholder="Search"
@@ -95,43 +107,47 @@ Cpassword:"", }))
                onFocus={pager}
              /> 
            
-               <button  className="search-btn-new" onClick={submitSearch}>
+               <button  className="search-btn-new-desktop" onClick={submitSearch}>
                  <FaSearch className="search-icon" />
                </button>
            </div>
+           </>
+        )
+          }
           {/* </LinkContainer> */}
        
-        
+          <div className="icons-cart-div">
             <button  className="call-btn-nav" >
-             <Link to="/"> <HiOutlinePhoneMissedCall className="call-icon-nav" /></Link>
+             <Link to="/contact"> <HiOutlinePhoneMissedCall className="call-icon-nav" /></Link>
             </button>
-             {/* <button  className="heart-btn-nav" >
-              <BsHeart className="heart-icon-nav" />
-            </button> */}
+           
             <button  className="cart-btn-nav" 
             onClick={changeRoute}
              >
             {/* {loger===true ?(  <Link  to="/cart"><BsCart4 className="cart-icon-nav" /></Link>):( <Link to="/login"><BsCart4 className="cart-icon-nav" /></Link>)} */}
             <BsCart4 className="cart-icon-nav" />
             </button> 
-            {loger && (
-  <div className="cart-pro-count"><p className="cart-pro-count-para">{count}</p></div>
+            
+          </div>
+          {loger && (
+  <div className="cart-pro-count">
+    <p className="cart-pro-count-para">{count}</p>
+    </div>
             )}
-          
        
           
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="collapse">
             <Nav className="me-auto">
              
          
               <Nav.Link as={NavLink}  to="/" className="Nav-home">Home</Nav.Link>
-              <Nav.Link href="#link" className="Nav-contact">Contact</Nav.Link>
+              <Nav.Link as={NavLink}  to="/contact" className="Nav-contact">Contact</Nav.Link>
               {loger===true ?( <h4 className="login-as-name">Login as <u>{current.Fname}</u></h4>):(<hr/>)}
              
              <div className="nav-login-div">
-              {loger===true ? ( <Link  className="login-button" onClick={()=>Logout()}   to="/">Logout</Link>):( <Link  className="login-button"   to="/login">Login</Link>)}
+              {loger===true ? ( <button  className="login-button" onClick={()=>Logout()}   >Logout</button>):( <button  className="login-button" onClick={()=>loginRoute("login")}   to="/login">Login</button>)}
             {/* <Link  className="login-button"   to="/login">Login</Link> */}
-            <Link  className="sign-button"   to="/sign">Sign Up</Link>
+            <button  className="sign-button" onClick={()=>loginRoute("sign")}   to="/sign">Sign Up</button>
              
          </div> 
             </Nav>
@@ -151,6 +167,7 @@ Cpassword:"", }))
              /> 
            
                <button  className="search-btn-new" onClick={submitSearch}>
+                 {/* Search  */}
                  <FaSearch className="search-icon" />
                </button>
            </div>
