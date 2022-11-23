@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useLocation } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
+import {TbTruckDelivery} from "react-icons/tb"
 import {HiLogout, HiOutlinePhoneMissedCall} from "react-icons/hi"
 import {BsCart4} from "react-icons/bs"
 import {BsHeart}from "react-icons/bs"
@@ -86,15 +87,27 @@ Cpassword:"", }))
  const pager=()=>{
   navigate("/search")
  }
+ const changer=()=>{
+  const id=current._id
+  if(loger===true){
+    navigate(`${id}/order`)
+  }else{
+    navigate("/login")
+  }
+ 
+ 
+ }
   return (
     <>
-      <Navbar bg="light" expand="lg" className="Navbar-size">
+      <Navbar bg="light" expand="sm" className="Navbar-size">
         <Container className="main-container-nav">
           {/* <LinkContainer to="/"> */}
           {/* <Navbar.Brand href="#home" className="brand-name">Wood-Grains</Navbar.Brand> */}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav"
+           className="nav-toogler-mob" />
+           
 
-          <Link to="/" className="brand-name"><img src="./images/circleLogo.png" width="64rem" height="64rem" /> WoodGrains</Link>
+          <Link to="/" className="brand-name"><img src="./images/circleLogo.png" className="logo-image" /> WoodGrains</Link>
           {url!== "/cart" && 
         (
           <>
@@ -117,8 +130,11 @@ Cpassword:"", }))
           {/* </LinkContainer> */}
        
           <div className="icons-cart-div">
-            <button  className="call-btn-nav" >
-             <Link to="/contact"> <HiOutlinePhoneMissedCall className="call-icon-nav" /></Link>
+            <button  className="call-btn-nav" onClick={()=>{changer()}}  >
+             {/* <p  */}
+            
+              <TbTruckDelivery className="call-icon-nav" />
+              {/* </p> */}
             </button>
            
             <button  className="cart-btn-nav" 
@@ -141,7 +157,10 @@ Cpassword:"", }))
              
          
               <Nav.Link as={NavLink}  to="/" className="Nav-home">Home</Nav.Link>
-              <Nav.Link as={NavLink}  to="/contact" className="Nav-contact">Contact</Nav.Link>
+              {/* <Nav.Link as={NavLink}  to="/login"
+              
+               className="Nav-contact">Contact</Nav.Link> */}
+               {/* <button className="contact-des"  onClick={changer()} >Contact</button> */}
               {loger===true ?( <h4 className="login-as-name">Login as <u>{current.Fname}</u></h4>):(<hr/>)}
              
              <div className="nav-login-div">

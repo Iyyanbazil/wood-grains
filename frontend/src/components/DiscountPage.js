@@ -87,6 +87,7 @@ const navigater=(id)=>{
         />
 </Button>{' '}
     </div>
+    <h3 className="discount-main-head">Discounted Products</h3>
  {all.filter((elem)=>elem.discount===true).map((curElem)=>{
     return(
         <>

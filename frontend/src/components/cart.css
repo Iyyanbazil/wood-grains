@@ -1,4 +1,4 @@
-@media only screen and  (max-width:430px){
+@media only screen and  (max-width:630px){
     .header-cart{
         display: flex;
         justify-content: center;
@@ -24,8 +24,10 @@
    }
    .cart-product-div{
     display: grid;
-    grid-template-columns: 9rem 16rem;
+    /* grid-template-columns: 9rem 16rem; */
+    grid-template-columns: auto auto;
     grid-template-rows: 10.5rem; 
+    grid-template-rows: auto; 
     /* height: 100vh; */
     /* row-gap: 1.5rem; */
    
@@ -37,6 +39,8 @@
    .cart-img{
     width:9rem;
     height: 10.3rem;
+    /* width: auto;
+    height: auto; */
    }
 
    .cart-product-table{

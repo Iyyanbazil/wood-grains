@@ -2,7 +2,10 @@ import React,{useState} from "react";
 import "./signup.css";
 import axios from "axios"
 import API from "./API"
+import {Link} from "react-router-dom"
 import { FcGoogle } from "react-icons/fc";
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 const Signup = () => {
   const [user, setuser] = useState({
     Fname:"",
@@ -11,6 +14,7 @@ const Signup = () => {
     password:"",
     Cpassword:"",
   })
+  const [spinner,setspinner]=useState(false)
 
   const setData=(e)=>{
     const {name,value}=e.target;
@@ -20,25 +24,49 @@ const Signup = () => {
     console.log(user);
   }
   const handleSubmit =async()=>{
+    setspinner(true)
     if(user.Fname==="" || user.Lname==="" || user.email==="" || user.password==="" || user.Cpassword===""  ){
+      setspinner(false)
       alert("Please fill the form completel")
     }
     if(user.Fname!="" || user.Lname!="" || user.email!="" || user.password!="" || user.Cpassword!=""  ){
    if(user.Cpassword!="" && user.password!=""){
     if(user.password!=user.Cpassword){
+      setspinner(false)
       alert("password not matched")
     } else{
-      axios.post(`${API}sign`,user).then((res)=>{
-        console.log(res);
-      })
-      window.location.pathname="/login"
+      const res= await axios.post(`${API}sign`,user)
+        if(res){
+          setspinner(false)
+          console.log(res)
+          if(res.data.msg==="user exist"){
+            alert("user exist")
+          }
+          if(res.data.msg==="done"){
+            window.location.href="/login"
+          }
+        }
+      }
+     
     }
    }
   }
   
    
-  }
+  
   return (
+    <>
+    <div className={spinner ? ("active-spinner-sign"):("disable-spinner-sign")}>
+    <Button variant="primary" disabled>
+        <Spinner
+          as="span"
+          animation="border"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+</Button>{' '}
+    </div>
     <div className="sign-background">
       <div className="email-pass-div-sign">
         <h3 className="login-main-head">Create Account</h3>
@@ -72,16 +100,19 @@ const Signup = () => {
        
         <section className="sign-login-div">
           <button className="login-btn-sign" onClick={handleSubmit}>Create</button>
+          <Link to="/login" className="already-account">already have account?</Link>
         </section>
       </div>
-      <section className="login-or-div-sign">
+      {/* <section className="login-or-div-sign">
         <p>OR</p>
         <button className="sign-btn-google">
            SignUp with <FcGoogle className="login-google" />
         </button>
-      </section>
+      </section> */}
     </div>
+    </>
   );
+  
 };
 
 export default Signup;

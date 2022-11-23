@@ -1,5 +1,5 @@
 
-@media (max-width:430px){
+@media (max-width:630px){
     .buyed-product-main{
         display: flex;
         margin-left: 1rem;
@@ -65,7 +65,13 @@
         display: flex;
         padding-left: 2rem;
         margin-top: 2rem;
+        /* margin-right:1rem; */
         
+    }
+    .cash-method-name{
+        display: flex;
+        column-gap: 3rem;
+        margin-left: 3rem;
     }
     .buyed-cash-jazz{
         height: 5rem;
@@ -111,10 +117,11 @@
     }
     .payment-div-buy{
         margin-left: 0.7rem;
+        margin-right: 0.7rem;
         margin-top: 1rem;
         /* text-decoration: underline; */
         background-color: rgba(165, 42, 42, 0.152);
-        width: 25rem;
+        width: auto;
         padding-top: 1rem;
         padding-left: 1rem;
         padding-bottom: 1rem;
@@ -132,6 +139,47 @@
         color: white;
         border: none;
     }
+    @keyframes alert {
+        0%{position: fixed;bottom: 0rem;left: 2rem;}
+        25%{position: fixed;bottom: 2rem;left: 2rem;}
+        50%{position: fixed;bottom: 4rem;left: 2rem;}
+        75%{position: fixed;bottom: 5rem;left: 2rem;}
+        100%{position: fixed;bottom: 6rem;left: 2rem;}
+     }
+         .alert-div-active-add{
+            position: fixed;
+            bottom: 4rem;
+            left: 2rem;
+          animation-name: alert;
+          animation-duration: 2s;
+          animation-iteration-count: 1;
+          
+          padding: 0.5rem 2rem;
+          background-color: rgba(0, 0, 0, 0.789);
+          color: white;
+          border-radius: 0.5rem;
+    
+         }
+         .alert-div-closed-add{
+           position: fixed;
+           bottom: 4rem;
+           left: 2rem;
+           border:1px solid red;
+           padding: 1rem 2rem;
+           background-color: white;
+           display: none;
+          }
+          .active-spinner-add{
+           position: fixed;
+           bottom: 20rem;
+           left: 10rem;
+          }
+          .disable-spinner-add{
+           position: fixed;
+           bottom: 20rem;
+           left: 40rem;
+           display: none;
+          }
 }
 
 /* ******************** Desktop view ******************** */
@@ -240,6 +288,11 @@
         margin-right: 2rem;
         border-radius: 10px;
     }
+    .cash-method-name{
+        display: flex;
+        column-gap: 2rem;
+        margin-left: 3rem;
+    }
     .payment-method-heading{
         margin-top: 1rem;
         margin-left: 2rem;
@@ -291,5 +344,46 @@
         color: white;
         border: none;
     }
+    @keyframes alert {
+        0%{position: fixed;bottom: 0rem;left: 2rem;}
+        25%{position: fixed;bottom: 2rem;left: 2rem;}
+        50%{position: fixed;bottom: 4rem;left: 2rem;}
+        75%{position: fixed;bottom: 5rem;left: 2rem;}
+        100%{position: fixed;bottom: 6rem;left: 2rem;}
+     }
+         .alert-div-active-add{
+            position: fixed;
+            bottom: 4rem;
+            left: 2rem;
+          animation-name: alert;
+          animation-duration: 2s;
+          animation-iteration-count: 1;
+          
+          padding: 0.5rem 2rem;
+          background-color: rgba(0, 0, 0, 0.789);
+          color: white;
+          border-radius: 0.5rem;
+    
+         }
+         .alert-div-closed-add{
+           position: fixed;
+           bottom: 4rem;
+           left: 2rem;
+           border:1px solid red;
+           padding: 1rem 2rem;
+           background-color: white;
+           display: none;
+          }
+          .active-spinner-add{
+           position: fixed;
+           bottom: 20rem;
+           left: 40rem;
+          }
+          .disable-spinner-add{
+           position: fixed;
+           bottom: 20rem;
+           left: 40rem;
+           display: none;
+          }
    
 }

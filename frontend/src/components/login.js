@@ -2,6 +2,9 @@ import React,{useState} from 'react'
 import "./login.css"
 import axios from "axios"
 import {FcGoogle} from "react-icons/fc"
+import {Link} from "react-router-dom"
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import API from "./API"
 const Login = () => {
     const [login, setlogin] = useState({
@@ -10,6 +13,7 @@ const Login = () => {
     })
     const [currentUser,setcurrentUser]=useState({})
    const [isLogin, setisLogin] = useState("false")
+   const [spinner,setspinner]=useState(false)
     const handleChange=(e)=>{
       const {value,name}=e.target
       setlogin({
@@ -19,22 +23,24 @@ const Login = () => {
       console.log(login);
     }
     const handleSubmit= async()=>{
+        setspinner(true)
         if(login.email==="" || login.password===""){
+            setspinner(false)
             alert("Fill the required field")
         }else{
             setisLogin("true")
-            // axios.post("http://localhost:8000/login",login).then((res)=>{
-            //     console.log(res.data);
-            //     window.localStorage.setItem("user",JSON.stringify(res.data))
-               
-            // })
             const res=await axios.post(`${API}login`,login)
             console.log(res.data);
             window.localStorage.setItem("user",JSON.stringify(res.data))
-            
-            window.localStorage.setItem("islogin","true")
+            if(res.data.msg!=="No such user exist"){
+                setspinner(false)
+                window.localStorage.setItem("islogin","true")
+            }
+           
             if(res.data.msg==="No such user exist"){
+                setspinner(false)
                 alert("No such user")
+                 window.localStorage.setItem("islogin","false")
             }else{
                 window.location.pathname="/"
             }
@@ -48,6 +54,17 @@ const Login = () => {
     }
   return (
    <>
+   <div className={spinner ? ("active-spinner-login"):("disable-spinner-login")}>
+    <Button variant="primary" disabled>
+        <Spinner
+          as="span"
+          animation="border"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+</Button>{' '}
+    </div>
    <div className='login-main-grid-div'>
     <div>
         <img src="./images/loginBanner.gif"className="login-banner" />
@@ -71,10 +88,11 @@ const Login = () => {
         <section className='login-login-div-account'>
             <button className='login-btn-account' onClick={()=>{handleSubmit()}}>Login</button>
         </section>
-        <section className='login-or-div'>
+        <Link to="/sign" className='new-login'>New? Sign up</Link>
+        {/* <section className='login-or-div'>
             <p>OR</p>
             <button className='login-btn-google-acc' >Login with <FcGoogle className='login-google'/></button>
-        </section>
+        </section> */}
         </div>
         
    </div>

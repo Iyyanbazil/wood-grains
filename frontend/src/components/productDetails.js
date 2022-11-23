@@ -18,7 +18,8 @@ import Spinner from 'react-bootstrap/Spinner';
 import "./productDetails.css";
 const ProductDetails = ({ all }) => {
   const [imagesall, setimages] = useState("");
-  const [quantity, setquantity] = useState(0);
+  const [quantity, setquantity] = useState("1");
+    const [color,setcolor]=useState("")
   const [ides,setides]=useState({});
   const [spinner,setspinner]=useState(false);
   const [pres,setpres]=useState(false)
@@ -63,7 +64,26 @@ const ProductDetails = ({ all }) => {
     }
   };
   const shop = () => {
-    Navigate(`/${id}/address`);
+    const current=window.localStorage.getItem("user")
+    setides(JSON.parse(current))
+    const need=JSON.parse(current)
+    const islogin=window.localStorage.getItem("islogin")
+
+    if(islogin==="true"){
+      if(quantity===""){
+        alert("Please select quantity")
+      }
+      if(color===""){
+        alert("Please select color")
+      }
+      if(quantity!=="" && color!==""){
+        Navigate(`/${id}/address?q=${quantity}&c=${color}`);
+      }
+    }else{
+      Navigate("/login")
+    }
+   
+   
   };
   const AddItem=async(pro)=>{
     setspinner(true)
@@ -109,7 +129,7 @@ const ProductDetails = ({ all }) => {
               className="detail-image"
               src={imagesall === "" ? elem.img : imagesall}
             />
-
+<p className="more-images">More Images</p>
             <section className="more-images-detail">
               <img
                 src={elem.img}
@@ -152,7 +172,7 @@ const ProductDetails = ({ all }) => {
           <h3>Quantity:</h3>
           
 
-            <select className='select-quantity'>
+            <select className='select-quantity' onChange={(e)=>setquantity(e.target.value)}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -164,16 +184,20 @@ const ProductDetails = ({ all }) => {
         <section className="color-selection-detail">
         <h3>Select Color</h3>
         <div>
-          <label for="black">Black</label>
-          <input name="black" type="radio" />
+          <label for="black" className={color==="black" ? ("active-color"):("disable-color")} onClick={()=>setcolor("black")}>Black</label>
+          {/* <input name="black" type="radio" /> */}
         </div>
         <div>
-          <label for="Brown">Brown</label>
-          <input name="black" type="radio" />
+          <label for="Brown" className={color==="brown" ? ("active-color"):("disable-color")} onClick={()=>setcolor("brown")}>Brown</label>
+          {/* <input name="black" type="radio" /> */}
         </div>
         <div>
-          <label for="white">white</label>
-          <input name="black" type="radio" />
+          <label for="white" className={color==="white" ? ("active-color"):("disable-color")} onClick={()=>setcolor("white")}>white</label>
+          {/* <input name="black" type="radio" /> */}
+        </div>
+        <div>
+        <label for="white">Custom</label>
+        <input type="text" className="color-input" placeholder='#Color' onChange={(e)=>setcolor(e.target.value)}/>
         </div>
       </section>
       <section>
@@ -184,9 +208,7 @@ const ProductDetails = ({ all }) => {
           Continue Buying
         </button>
       </section>
-      <div className="details-desktop">
-       <ProductDetailsDesktop  all={all}/>
-      </div>
+      
           </>
         );
       })}
@@ -195,7 +217,9 @@ const ProductDetails = ({ all }) => {
       
       
 </div>
-      
+<div className="details-desktop">
+       <ProductDetailsDesktop  all={all}/>
+      </div>
     </>
   );
 };

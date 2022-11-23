@@ -23,7 +23,7 @@ opacity: 0;
 
 
 }
-/* @media  (max-width:430px){
+/* @media screen and  (max-width:400px){
     .service-header{
         margin-top: 2rem;
         width:85%;
@@ -45,7 +45,13 @@ opacity: 0;
     .service-main{
         margin-left: 5rem;
         display: grid;
-        grid-template-columns: 6.5rem 6.5rem 6.5rem;
+        grid-template-columns: 7.5rem 7.5rem ;
+        margin-top: 1rem;
+    }
+    .skel-all-service{
+        display: grid;
+        grid-template-columns: 8rem 8rem;
+        margin-left: 1rem;
         margin-top: 1rem;
     }
     .service-para{
@@ -55,7 +61,7 @@ opacity: 0;
     }
 
 } */
-@media   (max-width:430px){
+@media   (max-width:630px){
     .service-header{
         margin-top: 2rem;
         width: 55%;
@@ -78,8 +84,10 @@ opacity: 0;
     .service-main{
         margin-left: 0.5rem;
         display: grid;
-        grid-template-columns: 8.5rem 8.5rem 8.5rem;
+        /* grid-template-columns: 8.5rem 8.5rem 8.5rem; */
+        grid-template-columns:auto auto auto;
         margin-top: 1rem;
+        margin-right:1rem
     }
     .service-para{
         font-size: 1rem;
@@ -118,7 +126,9 @@ opacity: 0;
         margin-top: 1rem;
     }
     .show-discount{
-        margin-left: 20rem;
+        /* margin-left: 20rem; */
+display:flex;
+justify-content: flex-end;
     }
     .single-disc{
         margin-left:0.52rem
@@ -128,7 +138,7 @@ opacity: 0;
 @media only screen and  (min-width:1000px){
     .service-header{
         overflow: hidden;
-        width:20%;
+        width:fit-content;
         height: 2rem;
         padding: 0rem 1rem;
         /* display: flex; */

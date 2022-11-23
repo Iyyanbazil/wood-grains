@@ -15,11 +15,14 @@ import {FcApproval} from "react-icons/fc"
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import "./productDetails.css";
+
 const ProductDetailsDesktop = ({all}) => {
     const [imagesall, setimages] = useState("");
     const [ides,setides]=useState({});
     const [pres,setpres]=useState(false);
-    const [quantity, setquantity] = useState(0);
+    const [quantity, setquantity] = useState("1");
+    const [color,setcolor]=useState("")
+  
 const [spinner,setspinner]=useState(false)
     useEffect(() => {
       const current=window.localStorage.getItem("user")
@@ -57,7 +60,26 @@ const [spinner,setspinner]=useState(false)
 const loading=useSelector((state)=>state.load.load)
     
     const shop = () => {
-      Navigate(`/${id}/address`);
+      const current=window.localStorage.getItem("user")
+    setides(JSON.parse(current))
+    const need=JSON.parse(current)
+    const islogin=window.localStorage.getItem("islogin")
+
+    if(islogin==="true"){
+      if(quantity===""){
+        alert("Please select quantity")
+      }
+      if(color===""){
+        alert("Please select color")
+      }
+      if(quantity!=="" && color!==""){
+        Navigate(`/${id}/address?q=${quantity}&c=${color}`);
+      }
+    }else{
+      Navigate("/login")
+    }
+   
+      
     };
 
 
@@ -79,6 +101,8 @@ const loading=useSelector((state)=>state.load.load)
     
     
      }
+     
+   
     return (
       <>
       <div className={pres ? ("alert-div-active"):("alert-div-closed")}>
@@ -95,6 +119,7 @@ const loading=useSelector((state)=>state.load.load)
         />
 </Button>{' '}
     </div>
+   
         {/* <GoogleSlider /> */}
         {filterd.map((elem) => {
           return (
@@ -104,7 +129,7 @@ const loading=useSelector((state)=>state.load.load)
                 className="detail-image"
                 src={imagesall === "" ? elem.img : imagesall}
               />
-  
+  <p className="more-images">More Images</p>
               <section className="more-images-detail">
                 <img
                   src={elem.img}
@@ -147,29 +172,36 @@ const loading=useSelector((state)=>state.load.load)
           <h3>Quantity:</h3>
           
 
-            <select className='select-quantity'>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select  onChange={(e)=>setquantity(e.target.value)} className='select-quantity'>
+              <option >1</option>
+              <option >2</option>
+              <option >3</option>
+              <option >4</option>
+              <option >5</option>
+            
               </select>
           {/* </div> */}
+          {/* {quantity ? (quantity):("no")} */}
         </section>
         <section className="color-selection-detail">
           <h3>Select Color</h3>
           <div>
-            <label for="black">Black</label>
-            <input name="black" type="radio" />
+            <label for="black" className={color==="black" ? ("active-color"):("disable-color")} onClick={()=>setcolor("black")}>Black</label>
+            {/* <input name="black" type="radio" /> */}
           </div>
           <div>
-            <label for="Brown">Brown</label>
-            <input name="black" type="radio" />
+            <label for="Brown" className={color==="brown" ? ("active-color"):("disable-color")} onClick={()=>setcolor("brown")}>Brown</label>
+            {/* <input name="black" type="radio" /> */}
           </div>
           <div>
-            <label for="white">white</label>
-            <input name="black" type="radio" />
+            <label for="white" className={color==="white" ? ("active-color"):("disable-color")} onClick={()=>setcolor("white")}>white</label>
+            {/* <input name="black" type="radio" /> */}
           </div>
+          {/* {color ? (color):("no")} */}
+          <div>
+        <label for="white" className='color-head'>Custom</label>
+        <input type="text" className="color-input" placeholder='#Color' onChange={(e)=>setcolor(e.target.value)}/>
+        </div>
         </section>
         </div>
               <div className='price-btn-div'>

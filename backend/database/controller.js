@@ -1,6 +1,7 @@
 const Product=require("./ProductSchema")
 const User=require("./userSchema")
 const Cart=require("./cartSchema")
+const Order=require("./orderSchema")
 const mongoose=require("mongoose")
 
  const show=async(req,res)=>{
@@ -13,7 +14,7 @@ const sign=async(req,res)=>{
   const {Fname,Lname,email,password,Cpassword}=req.body
   User.findOne({email:email},(err,user)=>{
     if(user){
-      res.send("user exist")
+      res.json({msg:"user exist"})
       
     }else{
       User.create({
@@ -23,6 +24,7 @@ const sign=async(req,res)=>{
         password:password,
         Cpassword:Cpassword,
       })
+      res.json({msg:"done"})
         }
     }
   )
@@ -126,8 +128,55 @@ const getcount=async (req,res)=>{
       
     }
   })
+  
 }
 
+const orders=async(req,res)=>{
+const {uid,pid,name,email,number,address,additional,payment,color,quantity,time,date,orderid}=req.body
+console.log("done")
+console.log(req.body)
+const fill=await Order.findOne({userId:uid})
+const pro=await Product.findOne({_id:pid})
+const already= await Order.findOne({order:{pro:{_id:pid}}})
+console.log(already)
+  if(fill){
+   const newres= await Order.updateOne({userId:uid},{$addToSet:{order:{pid,name,email,number,address,additional,payment,color,quantity,time,date,orderid,pro}}})
+  // const newer=await Order.updateOne({userId:uid},{$set:{pid,name,email,number,address,additional,payment,color,quantity,time,date}})
+  // const all= await Order.updateOne({userId:uid},{$addToSet:{pro}})
+ res.json({msg:"done"})
+  }else{
+    const order=new Order({
+      userId:uid,
+      order:[{pid,name,email,number,address,additional,payment,color,quantity,time,date,orderid,pro}]
+    })
+    order.save()
+    res.json({msg:"done"})
+  }
+}
+const getOrders=async(req,res)=>{
+  const {id}=req.params
+  console.log("from orders")
+  console.log(id)
+ const user= await Order.findOne({userId:id})
+ if(user){
+  res.json(user)
+  console.log(user)
+ }
+}
+
+const delOrder=async(req,res)=>{
+  const {id}=req.params;
+  const {proid,time}=req.body;
+  console.log(id)
+  console.log(proid)
+  console.log(time)
+  const user= Order.findOne({_id:id});
+ 
+    const respi= await Order.updateOne({userId:id},{$pull:{order:{time:time}}})
+ if(respi){
+  res.json({msg:"deleted"})
+ }
+}
 module.exports={
     show,
     sign,
@@ -139,4 +188,7 @@ module.exports={
     Count,
     getcount,
     // setCart,
+    orders,
+    getOrders,
+    delOrder,
 }

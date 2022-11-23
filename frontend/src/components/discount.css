@@ -1,9 +1,17 @@
 
-@media (max-width:430px){
+@media (max-width:630px){
+    .discount-main-head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        text-decoration:underline;
+    }
     .discount-main-div{
         margin-top: 2rem;
     display: grid;
     grid-template-columns: 12rem 15rem;
+    grid-template-columns: auto auto;
     }
     .discount-main-div-img{
         width:11rem;
@@ -75,6 +83,13 @@
 /* ************** Desktop view *********** */
 
 @media (min-width:1000px){
+    .discount-main-head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        text-decoration:underline;
+    }
     .trending-product-search{
         column-gap: 0.5rem;
         row-gap: 1rem;

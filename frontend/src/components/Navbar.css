@@ -1,10 +1,5 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   
-} */
-@media only screen and (max-width: 430px) {
+
+@media screen and  (max-width: 630px) {
   @keyframes sales {
     0% {
       opacity: 1;
@@ -31,50 +26,61 @@
       opacity: 0;
     }
   }
-  .search-nav {
-    width: 23rem;
-    padding-left: 2rem;
-
-    margin-left: 2rem;
-    padding-bottom: 0.1rem;
-    padding-left: 1rem;
-    padding-bottom: 0.1rem;
-    
-  }
+ 
   .cart-btn-nav,
   .call-btn-nav,
   .heart-btn-nav {
     border: none;
     background-color: white;
     padding: 0.5rem;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
   .cart-icon-nav {
     font-size: 1.8rem;
     color: rgb(230, 78, 154);
   }
   .call-icon-nav {
-    font-size: 1.8rem;
-    color: rgb(69, 69, 240);
-  
+    font-size: 2rem;
+    color: rgb(69, 72, 240);
+    
   }
   .heart-icon-nav {
     font-size: 1.8rem;
     color: red;
   }
+
   .navbar-div-nav {
+    width: 100%;
     background-color: rgb(212, 204, 204);
     /* margin-bottom: 1rem; */
     height: 2.5rem;
     padding-top: 0.4rem;
+padding-bottom: 2.5rem;
+/* padding-right: 3rem; */
+    
+  }
+  .search-nav {
+    width: 18rem;
+    height:2rem;
+    /* border:1px solid red; */
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    margin-right: 0.1rem;
   }
   .search-btn-new {
-   
-    margin-left: -3rem;
+ /* margin-right: 1rem; */
     border: none;
-    background-color: white;
-     color: rgb(107, 107, 237); 
-     font-size: 1.1rem;  
+    background-color: rgba(0, 0, 0, 0.622);
+     color: white; 
+     font-size: 1.1rem; 
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+     /* margin-bottom: 2rem; */
+     position:absolute;
+     left: 20rem;
   }
   .search-div {
     display: flex;
@@ -84,7 +90,13 @@
     width: 5rem;
     padding: 0px;
   }
-
+  .nav-toogler-mob{
+    margin-left:-1rem;
+  }
+  .logo-image{
+    width: 3rem;
+    height: 3rem;
+  }
   .brand-name {
     margin-left: -1rem;
     text-decoration: none;
@@ -109,6 +121,7 @@
   }
   .nav-login-div {
     display: flex;
+    
   }
 
   .sign-button {
@@ -153,17 +166,23 @@
     background-color: red;
     border: 1px solid red;
     border-radius: 50%;
-    position: absolute;
-    left: 24rem;
-    top: 0.8rem;
+    position:absolute;
+    
+    top: 0.4rem;
+    right: 1.4rem;
 
     color: white;
     opacity: 0.7;
+    overflow: hidden;
   }
   .cart-pro-count-para {
-    margin-top: -0.1rem;
-    margin-left: 0.2rem;
+    /* margin-top: -0.1rem;
+    margin-left: 0.2rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.8rem;
+    
   }
   .search-nav-desktop {
     display: none;
@@ -176,6 +195,8 @@
     display: none;
   }
 }
+
+
 /* ****************** Desktop version******************* */
 @media only screen and (min-width: 1000px) {
 @keyframes sales {
@@ -204,14 +225,12 @@
     opacity: 0;
   }
 }
-.navbar-div-desktop{
+.contact-des{
+  display:none
+}
+.nav-toogler-mob{
   /* border:1px solid red; */
-  width:25rem;
-  height: 3rem;
-  padding: 0.5rem;
-  position: relative;
-  left: 8rem;
-
+  display: none;
 }
 .nav-login-div {
   width: 15rem;
@@ -219,24 +238,35 @@
   position: relative;
   left: 2rem;
   top:-0.5rem;
+  border:1px solid yellow;
   
 }
 .icons-cart-div{
-  width: 10rem;
+  width: 7rem;
   padding-left:0rem ;
   /* border: 1px solid red; */
   position: relative;
-  left: 10rem;
+  left: 8rem;
   
 }
+.navbar-div-desktop{
+  /* border:1px solid red; */
+  width:25rem;
+  height: 3rem;
+  padding: 0.5rem;
+  position: relative;
+  left: 6rem;
+  padding-bottom: 3rem;
+  /* margin-left: 3rem; */
+  overflow: hidden;
 
+}
 .search-nav-desktop {
-  width: 22rem;
-  padding-left: 1rem;
-  margin-right: 1rem;
- 
+  width: 18rem;
+  height: 2rem;
+ border:1px solid black;
   padding-bottom: 0.1rem;
-  
+  padding-left: 1rem;
 }
 .cart-btn-nav,
 .call-btn-nav,
@@ -244,39 +274,33 @@
   border: none;
   background-color: white;
   padding: 0.5rem;
-  margin-left: 1.5rem;
+  margin-left: -0.5rem;
+  cursor: pointer;
 }
 .cart-icon-nav {
   font-size: 1.8rem;
   color: rgb(230, 78, 154);
+  margin-left: 1rem;
 }
 .call-icon-nav {
   font-size: 1.8rem;
   color: rgb(69, 69, 240);
   
 }
-
-.heart-icon-nav {
-  font-size: 1.8rem;
-  color: red;
-}
 .navbar-div-nav {
   background-color: rgb(228, 30, 30);
-  /* margin-bottom: 1rem; */
   height: 2.5rem;
   padding-top: 0.4rem;
-  /* margin-top: -1rem; */
   z-index: 1;
   display:none;
   
 }
 .search-btn-new-desktop {
-  /* padding: 10px; */
-  /* margin-right: 2rem; */
-  margin-left: -4rem;
+
   border: none;
-  background-color: white;
-  margin-right: 2rem;
+  background-color: grey;
+  /* margin-right: 6rem; */
+  padding: 0.25rem 0.5rem;
   
   
 }
@@ -292,6 +316,11 @@
 nav >.container {
   margin: 0px;
   max-width: 3000px;
+}
+.logo-image{
+  height:4rem;
+  width:5rem;
+
 }
 .brand-name {
   text-decoration: none;
@@ -343,17 +372,25 @@ nav >.container {
 a:hover {
   color: white;
 }
+.collapse{
+  /* border: 1px solid green; */
+  /* margin-left: -5rem; */
+  /* position: relative;
+  left: -1rem; */
+  width: 10rem;
+  
+}
+
 .login-button {
   background-color: rgb(236, 113, 113);
   margin-top: 1rem;
-  /* margin-left: -10rem; */
+ 
   border: none;
   border-radius: 0px 25px 0px 25px;
   width: 5.5rem;
   height: 2rem;
   color: white;
-  /* padding: 0.4rem; */
-  /* padding-top: -0.2rem; */
+margin-left:1rem;
   overflow: hidden;
   font-size: 1.2rem;
   text-decoration: none;
@@ -377,7 +414,7 @@ a:hover {
   color: white;
   opacity: 0.7;
   position: relative;
-  left: 6.8rem;
+  left: 4.8rem;
   top:-1rem;
   
   /* display: none; */
@@ -410,57 +447,4 @@ margin-top: -0.2rem;
 }
 
 }
-/* @media (min-width: 576px){
-.container, .container-sm {
-   max-width: 100%;
-}
-} */
 
-/* @media  (max-width:512px){
-    .navbar-toggler.collapsed{
-        
-        margin-right:4rem ;
-    }
- 
-    .nav-link{
-        
-        font-size: 1rem;
-        width: 5rem;
-        padding: 0px;
-    }
-    .navbar-nav{
-        margin-left: 8rem;
-        margin-top: 20px;
-    }
-    .sign-button{
-        background-color: red;
-        margin-top: 1rem;
-        margin-left:-7rem;
-        width:13rem;
-        height: 2.5rem;
-    }
-    .navbar-brand{
-        margin-left:0.5rem ;
-    }
-    .search-nav{
-        margin-left: -4.5rem;
-        width: 170px;
-        padding-left: 8px;
-        border-radius: 10px;
-       
-    }
-    .search-btn{
-        width: 10px;
-        height: 20px;
-        margin-left: -8rem;
-        margin-top: -1.4rem;
-       
-        border: none;
-    }
- 
-
-.cart-icon{
-    color:#ff0000;
-    font-size: 1.5rem;
-}
-} */

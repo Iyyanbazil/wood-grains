@@ -1,4 +1,4 @@
-@media only screen and  (max-width:430px){
+@media only screen and  (max-width:630px){
    .sign-background{
     background-image: url("4.jpg");
    }
@@ -67,7 +67,10 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
         font-weight: bolder;
-        margin-left: 6rem;
+        margin-left: 1rem;
+    }
+    .already-account{
+        margin-left: 1rem;
     }
     .login-main-head{
         /* color: white; */
@@ -100,7 +103,18 @@
         font-size: 4rem;
         /* color: white; */
     }
-    
+    .active-spinner-sign{
+        position: fixed;
+        bottom: 30rem;
+        left: 12rem;
+        z-index: 1;
+       }
+       .disable-spinner-sign{
+        position: fixed;
+        bottom: 20rem;
+        left: 40rem;
+        display: none;
+       }
     
     }
 
@@ -147,14 +161,14 @@
          }
          .email-label,.fname-label,.Lname-label{
              /* color: white; */
-             margin-left: 2rem;
+             margin-left: 1rem;
              font-size: 1.3rem;
              margin-top: 0.3rem;
              font-weight: bolder;
          }
          .password-label{
              /* color: white; */
-              margin-left: 2rem;
+              margin-left: 1rem;
              font-size: 1.5rem;
              font-weight: bolder;
          }
@@ -183,29 +197,45 @@
              font-size: 2rem;
              margin-top: -1rem;
              font-family: cursive;
+             text-decoration: underline;
          }
          .login-or-div-sign > p{
              color: white;
              margin-left: 30rem;
              margin-top: 0rem;
          }
-         .login-btn-google{
-             margin-left: 5rem;
-             padding: 0.4rem 6.5rem;
-             background-color: white;
-             opacity: 0.6;
-             /* color: white; */
-             border: none;
-             border-radius: 15px;
-             font-size: 2rem;
-             margin-bottom: 1rem;
-             width: 85%;
-             /* color: white; */
+         .already-account{
+margin-left: 1rem;
          }
-         .login-google{
-             font-size: 4rem;
-             /* color: white; */
-         }
-         
+         .sign-btn-google{
+            margin-left: 22rem;
+            padding: 0.4rem 1.5rem;
+            background-color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+           
+        }
+        .sign-btn-google:hover{
+            background-color: rgba(128, 128, 128, 0.374);
+        }
+        .login-google{
+            font-size: 4rem;
+            /* color: white; */
+        }
+        .active-spinner-sign{
+            position: fixed;
+            bottom: 20rem;
+            left: 40rem;
+            z-index: 1;
+           }
+           .disable-spinner-sign{
+            position: fixed;
+            bottom: 20rem;
+            left: 40rem;
+            display: none;
+           }
          
          }

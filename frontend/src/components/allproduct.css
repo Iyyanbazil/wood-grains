@@ -1,20 +1,22 @@
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 630px) {
   .heading-all {
     overflow: hidden;
     height: 2.5rem;
-    padding-left: 10rem;
+    /* padding-left: 10rem; */
     font-family: fantasy;
     color: rgb(189, 71, 71);
     border-radius: 20rem 20rem 0rem 0rem;
     background-color: rgb(189, 71, 71);
     color: white;
-
+display: flex;
+align-items: center;
+justify-content: center;
     padding-top: 0.5rem;
   }
 
   .trending-product-all {
     display: grid;
-    grid-template-columns: 12.5rem 12.5rem;
+    grid-template-columns: auto auto;
     column-gap: 0.5rem;
     row-gap: 1rem;
     padding-top: 1rem;
@@ -112,6 +114,48 @@
     grid-template-columns: 13rem 10rem;
     row-gap: 1rem;
   }
+  @keyframes alert {
+    0%{position: fixed;bottom: 0rem;left: 2rem;}
+    25%{position: fixed;bottom: 2rem;left: 2rem;}
+    50%{position: fixed;bottom: 4rem;left: 2rem;}
+    75%{position: fixed;bottom: 5rem;left: 2rem;}
+    100%{position: fixed;bottom: 6rem;left: 2rem;}
+ }
+     .alert-div-active{
+      /* position: fixed;
+      bottom: 4rem;
+      left: 2rem; */
+      /* border:1px solid red; */
+      animation-name: alert;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      
+      padding: 0.5rem 2rem;
+      background-color: rgba(0, 0, 0, 0.789);
+      color: white;
+      border-radius: 0.5rem;
+
+     }
+     .alert-div-closed{
+       position: fixed;
+       bottom: 4rem;
+       left: 2rem;
+       border:1px solid red;
+       padding: 1rem 2rem;
+       background-color: white;
+       display: none;
+      }
+      .active-spinner{
+       position: fixed;
+       bottom: 20rem;
+       left: 40rem;
+      }
+      .disable-spinner{
+       position: fixed;
+       bottom: 20rem;
+       left: 40rem;
+       display: none;
+      }
 }
 
 /* ********************Desktop view ************* */
@@ -136,12 +180,12 @@
 
   .trending-product-all {
     display: grid;
-    grid-template-columns: 14rem 14rem 14rem 14rem;
+    grid-template-columns: auto auto auto auto;
     column-gap: 0.5rem;
     row-gap: 1rem;
     column-gap: 2rem;
     padding-top: 1rem;
-    margin-left: 7rem;
+    margin-left: 2rem;
     margin-right: 0.5rem;
     overflow: hidden;
   }

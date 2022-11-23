@@ -28,7 +28,7 @@ navigate(`/trending/${name}`)
 
 </div>
     )} */}
-    <img src="./images/saleGif.gif" height="160rem" width="800rem" className="sale-gif" />
+    <img src="./images/saleGif.gif"  className="sale-gif" />
      
       <div className="trending-header">
         <h4>Trending Products</h4>

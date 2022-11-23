@@ -1,4 +1,4 @@
-@media only screen and  (max-width:430px){
+@media only screen and  (max-width:630px){
    
 .email-pass-div{
     /* border: 2px solid black; */
@@ -84,6 +84,21 @@
 .login-banner{
     display: none;
 }
+.new-login{
+    margin-left: 2rem;
+}
+.active-spinner-login{
+    position: fixed;
+    bottom: 30rem;
+    left: 12rem;
+    z-index: 1;
+   }
+   .disable-spinner-login{
+    position: fixed;
+    bottom: 20rem;
+    left: 40rem;
+    display: none;
+   }
 
 }
 
@@ -155,8 +170,10 @@
     .login-main-head-acc{
         
         font-size: 2rem;
-       margin-left: 10rem;
-       margin-bottom: 2rem;
+       margin-left: 6rem;
+       margin-bottom: 3rem;
+       text-decoration: underline;
+       overflow: hidden;
         
     }
     .login-or-div > p{
@@ -181,11 +198,28 @@
     }
     .login-main-grid-div{
         display: grid;
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 40% 60%;
         
     }
     .login-banner{
-        height: 30rem;
-        width: 100%;
+        height:35rem;
+        width: 60%;
     }
+    .new-login{
+        margin-left: 2rem;
+        cursor: pointer;
+    }
+    .active-spinner-login{
+        position: fixed;
+        bottom: 20rem;
+        left: 40rem;
+        z-index: 1;
+       }
+       .disable-spinner-login{
+        position: fixed;
+        bottom: 20rem;
+        left: 40rem;
+        display: none;
+       }
+    
     }

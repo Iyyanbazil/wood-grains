@@ -158,7 +158,7 @@ console.log(priceSee)
       <div>
         <img width="100%" height="130rem" src="/images/dinning.jpg" />
       </div>
-      <div className="search-filters">
+      {/* <div className="search-filters"> */}
         <div className="search-filter-list">
           <div className="best-rated">
             <p
@@ -252,7 +252,7 @@ console.log(priceSee)
             </FormControl>
           </div>
         </div>
-      </div>
+      {/* </div> */}
       <hr />
 
       

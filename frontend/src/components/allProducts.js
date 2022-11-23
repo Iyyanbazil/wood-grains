@@ -4,8 +4,8 @@ import axios from "axios"
 import API from "./API"
 import Alert from 'react-bootstrap/Alert';
 import { Link } from 'react-router-dom';
-
-
+import {FcApproval} from 'react-icons/fc'
+import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import { useState,useEffect } from 'react'
 import { BsCartPlus } from "react-icons/bs";
@@ -18,10 +18,10 @@ import { loadAction } from '../Redux/loadingSlice';
 import { Skeleton } from '@mui/material';
 import {CartActions} from "../Redux/cartSlice"
 
-import Button from 'react-bootstrap/Button';
+
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
-import {FcApproval} from 'react-icons/fc'
+
 
 const AllProduct = (props) => {
   const [ides,setides]=useState({})
