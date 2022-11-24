@@ -23,52 +23,16 @@ opacity: 0;
 
 
 }
-/* @media screen and  (max-width:400px){
-    .service-header{
-        margin-top: 2rem;
-        width:85%;
-        margin-top: 2rem;
-        margin-left: 6rem;
-       padding-top: 0.2rem;
-        font-family:fantasy;
-        color: rgb(189, 71, 71);
-        border: 3px solid black;
-         border-radius: 20rem 0rem 20rem 0rem;
-    }
-    .service-header > h3{
-    font-size: 1.2rem;
-    }
-    .service-header > p{
-        font-size: 0.8rem;
-        }
-    
-    .service-main{
-        margin-left: 5rem;
-        display: grid;
-        grid-template-columns: 7.5rem 7.5rem ;
-        margin-top: 1rem;
-    }
-    .skel-all-service{
-        display: grid;
-        grid-template-columns: 8rem 8rem;
-        margin-left: 1rem;
-        margin-top: 1rem;
-    }
-    .service-para{
-        font-size: 0.7rem;
-        font-weight: bold;
-        
-    }
 
-} */
 @media   (max-width:630px){
     .service-header{
         margin-top: 2rem;
-        width: 55%;
+        width: fit-content;
         margin-top: 2rem;
         margin-left: 6rem;
-       padding-left: 1.5rem;
+       padding-left: 1rem;
        padding-top: 0.2rem;
+       padding-right:1rem;
         font-family:fantasy;
         color: rgb(189, 71, 71);
         border: 3px solid black;

@@ -43,14 +43,22 @@ const Navbars = () => {
     setSearchVal(e.target.value);
     console.log(SearchVal);
   };
-  const submitSearch = () => {
+  const submitSearch = (e) => {
+    if(e.key==="Enter"){
     dispatch(NavActions.setValue(SearchVal));
     if(SearchVal==="" && location.pathname==='/'){
       navigate('/')
     }else{
      navigate('/search')
     }
-   
+  }
+  dispatch(NavActions.setValue(SearchVal));
+    if(SearchVal==="" && location.pathname==='/'){
+      navigate('/')
+    }else{
+     navigate('/search')
+    }
+
   };
 const changeRoute=()=>{
   const userId=current._id
@@ -118,6 +126,7 @@ Cpassword:"", }))
                value={SearchVal}
                onChange={(e) => saveSearch(e)}
                onFocus={pager}
+               onKeyDown={(e)=>{submitSearch(e)}}
              /> 
            
                <button  className="search-btn-new-desktop" onClick={submitSearch}>
@@ -183,9 +192,10 @@ Cpassword:"", }))
                value={SearchVal}
                onChange={(e) => saveSearch(e)}
                onFocus={pager}
+               onKeyDown={(e)=>{submitSearch(e)}}
              /> 
            
-               <button  className="search-btn-new" onClick={submitSearch}>
+               <button  className="search-btn-new" onClick={submitSearch} >
                  {/* Search  */}
                  <FaSearch className="search-icon" />
                </button>

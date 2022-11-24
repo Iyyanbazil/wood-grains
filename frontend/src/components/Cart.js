@@ -25,6 +25,7 @@ const Cart = () => {
  const [carter,setcarter]=useState(false)
  const [spinner,setspinner]=useState(false)
  const [pres,setpres]=useState(false)
+ const [refresh,setrefresh]=useState(false)
   const dispatch=useDispatch()
  const navigate=useNavigate()
  const path=window.location.pathname;
@@ -32,6 +33,7 @@ const Cart = () => {
  useEffect(() => {
   setTimeout(() => {
     setpres(false);
+   setsearch("")
   }, 3000);
 }, [pres])
   useEffect(() => {
@@ -61,7 +63,7 @@ const res=axios.post(`${API}${userID}/cart`)
 
    
 
-  }, [alert]);
+  }, [alert,pres]);
  window.setTimeout(() =>setalert(false) , 5000);
   // clearTimeout(timer);
   const reload=()=>{
@@ -77,6 +79,7 @@ const res=axios.post(`${API}${userID}/cart`)
        setcarter(!carter)
        setspinner(false)
        setpres(true)
+      
       }
       console.log(res)
     })
@@ -103,7 +106,7 @@ navigate(`${path}/${id}`)
         <section className="cart-search-section">
           {/* <label>Filter</label> */}
           <input className="cart-search" type="text" placeholder="Search"
-           onChange={(e)=>{CartSearch(e)}} 
+           onChange={(e)=>{CartSearch(e)}} onKeyPress={(e)=>{CartSearch(e)}} 
           />
           <button className="search-btn-cart"
           //  onClick={CartSearch}
